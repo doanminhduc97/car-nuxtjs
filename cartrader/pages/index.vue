@@ -1,16 +1,13 @@
 <template>
   <div>
-    <NavBar />
-    <Hero />
+    <CarNavBar />
+    <CarHero />
   </div>
 </template>
 
 <script setup>
-
-import NavBar from "../components/Car/NavBar.vue"
-import Hero from "../components/Car/Hero.vue"
-
-
-
+useHead({
+  title: 'Cartrader'
+})
 
 </script>
