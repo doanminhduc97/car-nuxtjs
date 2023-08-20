@@ -1,0 +1,408 @@
+1
+00:00:00,090 --> 00:00:00,870
+In this video.
+
+2
+00:00:00,870 --> 00:00:06,060
+What I would like to do is populate this page with all of the necessary components, like the nav bar
+
+3
+00:00:06,060 --> 00:00:08,760
+component as well as the hero.
+
+4
+00:00:08,790 --> 00:00:14,730
+So let's actually go over here and we're going to have to actually start creating some of these components.
+
+5
+00:00:14,730 --> 00:00:20,670
+And let's begin with the nav bar, which is going to be by far the simplest thing that we have thus
+
+6
+00:00:20,670 --> 00:00:21,180
+far.
+
+7
+00:00:21,420 --> 00:00:25,890
+So I'm going to go ahead and create another directory and I'm going to call this directory components.
+
+8
+00:00:25,920 --> 00:00:31,590
+Now, the name of this is also extremely important because we're going to place all of our components
+
+9
+00:00:31,590 --> 00:00:32,280
+in here.
+
+10
+00:00:32,729 --> 00:00:37,710
+And as soon as we place Vue files in here, Knox is actually going to know that they're components because
+
+11
+00:00:37,710 --> 00:00:42,270
+they're inside of this directory right over here.
+
+12
+00:00:42,480 --> 00:00:46,420
+And it's going to do some special magic that we're going to see a little bit later.
+
+13
+00:00:46,440 --> 00:00:52,110
+So I want to go over here and I'm going to create a nav bar dot view file.
+
+14
+00:00:52,110 --> 00:00:56,330
+And we actually already well wrote out the nav bar HTML.
+
+15
+00:00:56,340 --> 00:01:01,110
+So if we go to the home page, we can just go ahead and just grab this right over here.
+
+16
+00:01:01,110 --> 00:01:04,970
+So where over here, you can see it starts out enough, bar ends and nav bar.
+
+17
+00:01:04,980 --> 00:01:11,370
+So just grab this HTML as well as CSS, and then we're going to go over to our nav bar.
+
+18
+00:01:11,400 --> 00:01:16,790
+We're going to create a templates and we're going to go ahead and just paste this in right over here.
+
+19
+00:01:16,800 --> 00:01:18,820
+So this is our nav bar.
+
+20
+00:01:18,840 --> 00:01:24,760
+And now what I want to do is I actually want to use it within the index dot view file.
+
+21
+00:01:24,780 --> 00:01:29,640
+So typically what we would do is we would actually import in that nav bar component.
+
+22
+00:01:29,640 --> 00:01:33,540
+So we would have some sort of script tag right over here.
+
+23
+00:01:33,540 --> 00:01:41,190
+We'll say script setup and we would just say very simply, import nav bar, and then we can say from
+
+24
+00:01:41,190 --> 00:01:46,620
+we'll move back to directory, we'll go components and we'll just say nav bar, and then right over
+
+25
+00:01:46,620 --> 00:01:51,300
+here we can just go ahead and just render this Navarre component.
+
+26
+00:01:51,300 --> 00:01:53,160
+So that's typically what we would do.
+
+27
+00:01:53,160 --> 00:01:54,990
+And you can see that this still works.
+
+28
+00:01:54,990 --> 00:01:57,110
+The cell is a viable solution.
+
+29
+00:01:57,120 --> 00:02:03,810
+However, we actually do not need to do all of this inside of a Knox application.
+
+30
+00:02:03,810 --> 00:02:11,430
+And that's because whenever we place something within the components directory, Knox is going to understand
+
+31
+00:02:11,430 --> 00:02:13,950
+that it is indeed a component.
+
+32
+00:02:13,950 --> 00:02:20,130
+And whenever we actually just go ahead and render that component within a page or another component,
+
+33
+00:02:20,130 --> 00:02:23,760
+it is going to go ahead and auto import for us.
+
+34
+00:02:23,760 --> 00:02:28,890
+So over here I can actually remove all of this bloat and I can just go ahead and save this.
+
+35
+00:02:28,890 --> 00:02:33,500
+And it's going to be smart enough to basically will do this under the hood.
+
+36
+00:02:33,510 --> 00:02:35,340
+So we're going to go ahead and just save that.
+
+37
+00:02:35,340 --> 00:02:42,960
+And now just to prove to you that we still have our nav bar Tata, we still have our nav bar.
+
+38
+00:02:42,990 --> 00:02:48,360
+This is pretty incredible and can make our code significantly cleaner.
+
+39
+00:02:48,510 --> 00:02:48,930
+All right.
+
+40
+00:02:48,930 --> 00:02:55,590
+So now let's actually go ahead and do the exact same thing, but this time for the car hero.
+
+41
+00:02:55,590 --> 00:02:59,550
+So I'm going to go ahead and create another another component.
+
+42
+00:02:59,550 --> 00:03:02,100
+And I'm going to call this car hero.
+
+43
+00:03:02,860 --> 00:03:09,590
+I'm going to say car hero dot view, and I am going to go over to where are we?
+
+44
+00:03:09,600 --> 00:03:14,070
+I'm going to go over to the home page and I'm going to grab this car hero.
+
+45
+00:03:14,070 --> 00:03:17,190
+So you can see here we have this comment here saying car hero.
+
+46
+00:03:17,200 --> 00:03:19,800
+We also have this end comment that also says car hero.
+
+47
+00:03:19,800 --> 00:03:29,250
+So we could just grab all of the HTML within that and just copy that and we can go over to Car Hero
+
+48
+00:03:29,280 --> 00:03:34,890
+and we can go ahead and just create a template and just paste in all of that HTML.
+
+49
+00:03:34,890 --> 00:03:37,560
+And now very simply, look at this.
+
+50
+00:03:37,560 --> 00:03:45,240
+I can just go here and just say Car Hero, the exact same name of the file, and then tada, we get
+
+51
+00:03:45,240 --> 00:03:47,160
+our car hero.
+
+52
+00:03:47,190 --> 00:03:49,530
+How cool is that?
+
+53
+00:03:49,560 --> 00:03:54,870
+Now, one thing that I actually also want to do is I want to separate this home search bar.
+
+54
+00:03:54,870 --> 00:03:59,370
+So if you go to our final or if we go to this version over here, actually, I want to separate this
+
+55
+00:03:59,370 --> 00:04:04,500
+search bar into its own component, because this search bar has quite a bit of functionality within
+
+56
+00:04:04,500 --> 00:04:05,250
+itself.
+
+57
+00:04:05,250 --> 00:04:07,200
+And I would like to kind of isolate it.
+
+58
+00:04:07,650 --> 00:04:08,940
+So let's go ahead and do that.
+
+59
+00:04:08,940 --> 00:04:10,190
+That should be pretty easy.
+
+60
+00:04:10,200 --> 00:04:14,700
+I'm going to call this car search bar.
+
+61
+00:04:16,550 --> 00:04:17,930
+Or going say doctor view.
+
+62
+00:04:18,260 --> 00:04:23,150
+And then over here, I'm going to go ahead and just kind of cut everything within this.
+
+63
+00:04:23,720 --> 00:04:27,560
+So within this comments, let's just go ahead and just cut everything out.
+
+64
+00:04:27,560 --> 00:04:30,110
+And we can also we'll cut this out a little bit later.
+
+65
+00:04:30,830 --> 00:04:32,300
+We're going to create a template.
+
+66
+00:04:32,600 --> 00:04:36,410
+And then over here, we're going to create that car search bar.
+
+67
+00:04:37,040 --> 00:04:40,730
+And now this time, we're inside of a component, not a page.
+
+68
+00:04:40,730 --> 00:04:42,230
+We can still treat it.
+
+69
+00:04:42,440 --> 00:04:44,480
+We can still basically do the exact same thing.
+
+70
+00:04:44,480 --> 00:04:52,020
+We can just say here now car search bar, and we can go ahead and just save that.
+
+71
+00:04:52,040 --> 00:04:57,040
+And if I were to go back to my application, it still renders that search bar.
+
+72
+00:04:57,050 --> 00:05:01,670
+And if I were to, of course, comment it out, just to prove to you, let's go ahead and just comment
+
+73
+00:05:01,670 --> 00:05:02,030
+this out.
+
+74
+00:05:02,030 --> 00:05:03,320
+You can see that it is gone.
+
+75
+00:05:03,370 --> 00:05:04,010
+Tada!
+
+76
+00:05:04,040 --> 00:05:04,730
+Awesome.
+
+77
+00:05:04,910 --> 00:05:05,240
+All right.
+
+78
+00:05:05,240 --> 00:05:06,290
+So now we can just remove this.
+
+79
+00:05:06,290 --> 00:05:07,670
+We don't need that anymore.
+
+80
+00:05:07,850 --> 00:05:15,440
+So one thing that I also want to quickly note is that you can see here that within our component directory,
+
+81
+00:05:15,440 --> 00:05:21,680
+it seems that for at least for these two components here, we have kind of a very similar naming structure.
+
+82
+00:05:21,680 --> 00:05:26,330
+So we have car and then hero car and then search bar.
+
+83
+00:05:26,330 --> 00:05:30,890
+And later on we're going to have a lot of other components are going to follow that exact same naming
+
+84
+00:05:30,890 --> 00:05:36,490
+structure like car card or car sidebar or whatever.
+
+85
+00:05:36,500 --> 00:05:42,170
+So one thing that's actually nice is that what we can do if we have this naming convention where we
+
+86
+00:05:42,170 --> 00:05:47,660
+always start off with the exact same name and then we have other different names after it, what we
+
+87
+00:05:47,660 --> 00:05:55,490
+can do is we can actually create a directory called car within our components file or components folder.
+
+88
+00:05:55,490 --> 00:06:03,560
+And then over here we can actually remove the car from these files so we can just say instead of hero,
+
+89
+00:06:03,560 --> 00:06:07,010
+we can say or instead of car hero, we can just say hero.
+
+90
+00:06:07,040 --> 00:06:08,570
+Let's just skip these changes.
+
+91
+00:06:08,570 --> 00:06:09,470
+It's fine.
+
+92
+00:06:10,220 --> 00:06:13,490
+We can just go ahead and actually move that in here now.
+
+93
+00:06:13,700 --> 00:06:19,040
+So I'm going to go ahead and just move that in there and we're going to do the exact same thing here.
+
+94
+00:06:20,930 --> 00:06:25,130
+Let's go ahead and just change that and we're going to move that in there.
+
+95
+00:06:26,730 --> 00:06:31,260
+And we're gonna say, okay, and now this is actually going to behave the exact same way.
+
+96
+00:06:31,260 --> 00:06:33,660
+The names is actually going to be exactly the same.
+
+97
+00:06:33,660 --> 00:06:38,700
+It's still going to be Car Hero, even though our file now is just hero.
+
+98
+00:06:38,700 --> 00:06:44,280
+And that's because what ends up happening in the component directory is if we want to specify a specific
+
+99
+00:06:44,280 --> 00:06:48,300
+file that is nested, we would have to append both names together.
+
+100
+00:06:48,300 --> 00:06:52,920
+So both names together, so be car hero and then car search bar.
+
+101
+00:06:52,950 --> 00:06:53,880
+That's pretty neat.
+
+102
+00:06:53,880 --> 00:06:59,310
+And if I were to go back here, of course, if I were to refresh, everything is working a okay.
+

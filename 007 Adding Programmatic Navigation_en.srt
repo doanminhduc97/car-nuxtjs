@@ -1,0 +1,332 @@
+1
+00:00:00,060 --> 00:00:01,530
+We got the nod for working.
+
+2
+00:00:01,530 --> 00:00:04,939
+But now I want to get this search bar working over here.
+
+3
+00:00:04,950 --> 00:00:10,560
+And for this search bar, we can't really use a nux link because we need to programmatically change
+
+4
+00:00:10,560 --> 00:00:11,530
+the path.
+
+5
+00:00:11,550 --> 00:00:13,370
+So let's go to our search bar.
+
+6
+00:00:13,380 --> 00:00:18,960
+So let's go over here to car and we're going to go to search bar and over here this is where we're going
+
+7
+00:00:18,960 --> 00:00:22,400
+to dynamically change the path itself.
+
+8
+00:00:22,410 --> 00:00:26,970
+So we're going to go and we're going to have to utilize a script tag.
+
+9
+00:00:26,970 --> 00:00:29,820
+So we're going to say script and we're going to say setup.
+
+10
+00:00:31,020 --> 00:00:33,790
+So script set up like so.
+
+11
+00:00:33,810 --> 00:00:36,360
+And how do we typically do this?
+
+12
+00:00:36,390 --> 00:00:40,410
+Well, we typically do this by first adding a V model.
+
+13
+00:00:40,410 --> 00:00:45,780
+So we can go over here, we can add a V model, we can call this city.
+
+14
+00:00:45,870 --> 00:00:52,710
+And then over here we can create a constant city is equal to ref, so we can actually store the value.
+
+15
+00:00:52,740 --> 00:00:57,390
+Now notice we don't have to import ref in again, this is something that is auto imported.
+
+16
+00:00:57,390 --> 00:00:59,760
+So that's the very first thing that we're going to do.
+
+17
+00:00:59,760 --> 00:01:04,590
+And then typically what we're going to do is we're going to go ahead and just say cost and then we're
+
+18
+00:01:04,590 --> 00:01:09,230
+going to get rotor from the use rotor composable.
+
+19
+00:01:09,240 --> 00:01:15,330
+And then what we're going to do is whenever we click this button right here, let's go ahead and just
+
+20
+00:01:15,330 --> 00:01:23,610
+say add click, let's just say handle search, create a function called handle search here so we can
+
+21
+00:01:23,610 --> 00:01:26,280
+say const, handle search.
+
+22
+00:01:26,280 --> 00:01:33,000
+And over here, what we can very simply do is just say rotor.
+
+23
+00:01:33,780 --> 00:01:39,060
+So rotor dot push and then we can push in the path that we want.
+
+24
+00:01:39,060 --> 00:01:40,800
+So over here, what is it?
+
+25
+00:01:40,820 --> 00:01:43,790
+The path that we want, what we want to go to slash city.
+
+26
+00:01:43,800 --> 00:01:47,570
+And then in this case it's going to be slash city dot value.
+
+27
+00:01:47,580 --> 00:01:50,130
+And then over here we're going to say slash car.
+
+28
+00:01:50,160 --> 00:01:51,510
+Now there's going to be no make.
+
+29
+00:01:51,510 --> 00:01:53,520
+So we're not going to add that part.
+
+30
+00:01:53,550 --> 00:01:57,180
+And that's pretty much actually all it is that we need to do to get that to work.
+
+31
+00:01:57,180 --> 00:02:04,110
+So if I were to say auto in here and say search, you can see that that does indeed work and take me
+
+32
+00:02:04,110 --> 00:02:06,360
+to where I need to be.
+
+33
+00:02:06,360 --> 00:02:08,270
+Okay, so this is good.
+
+34
+00:02:08,280 --> 00:02:12,750
+However, this actually isn't that necessary with Knox.
+
+35
+00:02:12,750 --> 00:02:15,030
+So Knox actually makes this a little bit simpler.
+
+36
+00:02:15,030 --> 00:02:21,600
+So instead of using the use route or composable to go ahead and actually add this path, instead, we
+
+37
+00:02:21,600 --> 00:02:27,720
+can actually kind of completely get rid of this used road or composable and instead use the navigate
+
+38
+00:02:27,750 --> 00:02:28,950
+to function.
+
+39
+00:02:28,950 --> 00:02:32,010
+That again, is going to be auto imported for us.
+
+40
+00:02:32,010 --> 00:02:37,620
+So I'm going to go ahead and just cut this out and just paste it right in here inside of the navigate
+
+41
+00:02:37,620 --> 00:02:38,850
+to function.
+
+42
+00:02:38,850 --> 00:02:41,500
+And now I'm going to do just a quick little refresh here.
+
+43
+00:02:41,520 --> 00:02:46,260
+Let's change this to, let's say, Asia to Los Angeles.
+
+44
+00:02:46,260 --> 00:02:51,840
+And if I go ahead and click search, you can see now it has navigated me back to Los Angeles.
+
+45
+00:02:51,840 --> 00:02:55,430
+So that is great and that is amazing.
+
+46
+00:02:55,440 --> 00:02:59,640
+Now there is one potential issue and this doesn't really relate to Nux.
+
+47
+00:02:59,640 --> 00:03:04,920
+I can go ahead at this point and just search and it's going to take me to the slash city and let me
+
+48
+00:03:04,920 --> 00:03:11,220
+just zoom in here slash city slash slash and then car and that's because the city is empty.
+
+49
+00:03:11,220 --> 00:03:19,770
+So one thing that we can also do just as a quick precaution is check if the city is indeed is indeed
+
+50
+00:03:19,770 --> 00:03:20,640
+not empty.
+
+51
+00:03:20,640 --> 00:03:28,680
+So what we can do here is we can say if the city dot value is empty, then what we can do is we can
+
+52
+00:03:28,860 --> 00:03:30,450
+return early.
+
+53
+00:03:30,450 --> 00:03:35,970
+And another thing that we can also do, just so we can show some sort of user feedback, is we can create
+
+54
+00:03:35,970 --> 00:03:37,110
+another piece of state.
+
+55
+00:03:37,110 --> 00:03:39,300
+And I can just say city error.
+
+56
+00:03:39,300 --> 00:03:43,110
+And for now I'm going to say city error is false.
+
+57
+00:03:43,110 --> 00:03:46,290
+And over here I'm just going to say return city error.
+
+58
+00:03:46,290 --> 00:03:48,570
+Dot value is equal to true.
+
+59
+00:03:48,720 --> 00:03:57,900
+And now what we can do here is we can go to this input over here and we can add a dynamic class.
+
+60
+00:03:57,900 --> 00:04:07,710
+So we can say class and we can say if we have a city error, then what we want to do is we want to render
+
+61
+00:04:07,740 --> 00:04:10,380
+a border that is red.
+
+62
+00:04:10,380 --> 00:04:15,870
+So we can say here, actually let's go to Tailwind, just to just to show you exactly how we do this.
+
+63
+00:04:15,870 --> 00:04:21,390
+So we're going to go over here and we're going to just search for border and we're going to say border
+
+64
+00:04:21,390 --> 00:04:25,110
+color, for example, and I want a red border.
+
+65
+00:04:25,110 --> 00:04:27,210
+So let's just scroll all the way over here.
+
+66
+00:04:27,210 --> 00:04:28,860
+So kind of a border like this.
+
+67
+00:04:28,860 --> 00:04:34,050
+So this is the class that we're going to use, which is going to be border red and 500.
+
+68
+00:04:34,050 --> 00:04:37,230
+So border red, 500 like so.
+
+69
+00:04:37,230 --> 00:04:39,420
+And also we need to add a border.
+
+70
+00:04:39,420 --> 00:04:46,160
+So I believe we also add this class over here and then we'll just say else, then add nothing at all.
+
+71
+00:04:46,170 --> 00:04:49,170
+So let's go ahead and just quickly just see if that works.
+
+72
+00:04:50,130 --> 00:04:51,330
+Let's go back home.
+
+73
+00:04:52,050 --> 00:04:53,700
+Let's zoom out.
+
+74
+00:04:53,730 --> 00:04:55,260
+Let's go to Tur.
+
+75
+00:04:55,300 --> 00:04:56,960
+Oh, it's actually not add anything.
+
+76
+00:04:56,970 --> 00:04:57,560
+And there we go.
+
+77
+00:04:57,570 --> 00:04:59,920
+You can see we get this kind of red state.
+
+78
+00:04:59,940 --> 00:05:02,130
+I know it's kind of ugly right over here.
+
+79
+00:05:02,160 --> 00:05:03,290
+That's completely fine.
+
+80
+00:05:03,300 --> 00:05:04,100
+Who cares?
+
+81
+00:05:04,110 --> 00:05:08,190
+But you can see that we actually get this red color, which is amazing.
+
+82
+00:05:08,190 --> 00:05:13,680
+But now if I go to Toronto or whatever you can see now, and if you go back, everything is completely
+
+83
+00:05:13,680 --> 00:05:14,220
+fine.
+

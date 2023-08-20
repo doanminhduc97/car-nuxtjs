@@ -1,0 +1,112 @@
+1
+00:00:00,120 --> 00:00:07,110
+Now that we have created all of our different pages, I want to have the ability to navigate within
+
+2
+00:00:07,110 --> 00:00:13,740
+these pages, within the actual application itself, and not have to well redirect to whatever page
+
+3
+00:00:13,740 --> 00:00:14,940
+I want to go to.
+
+4
+00:00:15,330 --> 00:00:22,740
+So, for example, if I want to go to that slash city slash dynamic city name over here, if I want
+
+5
+00:00:22,740 --> 00:00:28,240
+to go to this page, what I don't want to do is actually have to type that into the URL itself.
+
+6
+00:00:28,260 --> 00:00:33,540
+What I want to do is I want to just say auto search and have it move me there itself.
+
+7
+00:00:33,570 --> 00:00:37,460
+Another thing that I would like is to have this nav bar be functional.
+
+8
+00:00:37,470 --> 00:00:43,770
+So whenever I click on this, I would very much like it for it to go back to the home page.
+
+9
+00:00:43,770 --> 00:00:48,120
+So let's actually begin with the naff bar, because that's, that's actually the simplest thing that
+
+10
+00:00:48,120 --> 00:00:49,460
+we can do right now.
+
+11
+00:00:49,470 --> 00:00:50,730
+So the nav bar.
+
+12
+00:00:50,760 --> 00:00:56,310
+Very simply, whenever we click on this, I just want it to go back to the slash root, the home page.
+
+13
+00:00:56,310 --> 00:01:00,930
+And what we can do to do that is we can go to our nav bar components.
+
+14
+00:01:00,930 --> 00:01:05,310
+So let's go to our nav bar components right over here.
+
+15
+00:01:05,580 --> 00:01:11,810
+And what we can do here is we can actually make the rough slash so we can make it slash h ref.
+
+16
+00:01:11,820 --> 00:01:16,020
+And now when I go over here, you can see that it takes me back to this page.
+
+17
+00:01:16,170 --> 00:01:24,960
+However, just like in view, where when we ever add an H ref, instead of adding a view link or a view
+
+18
+00:01:25,140 --> 00:01:30,810
+a route or link, instead of using that, what it's going to do is it's going to refresh our page,
+
+19
+00:01:30,810 --> 00:01:33,230
+which is not that great.
+
+20
+00:01:33,240 --> 00:01:39,720
+So instead what we're going to do is we're going to use a built in Nux component called Nux link.
+
+21
+00:01:39,720 --> 00:01:41,970
+So Nux link right over here.
+
+22
+00:01:41,970 --> 00:01:48,420
+And that's going to allow us to navigate across pages but not have to refresh our page every time.
+
+23
+00:01:48,420 --> 00:01:52,790
+And it does start with something called universal rendering, which we'll talk about a little bit later.
+
+24
+00:01:52,800 --> 00:01:57,670
+So we're going to change the ref from not being a ref, but instead to two.
+
+25
+00:01:57,690 --> 00:01:59,820
+And notice that we didn't have to import this in.
+
+26
+00:01:59,820 --> 00:02:02,510
+Again, this is something that was auto imported.
+
+27
+00:02:02,520 --> 00:02:08,250
+So now if I go ahead and actually save this and let me go to another page now, let's go to this page
+
+28
+00:02:08,250 --> 00:02:15,660
+and then if I go over here, you can see it got redirected back to this page, which is terrific.
+

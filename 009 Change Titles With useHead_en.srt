@@ -1,0 +1,432 @@
+1
+00:00:00,930 --> 00:00:08,960
+The last thing that I would like to do in this section is change the titles of each particular page.
+
+2
+00:00:08,970 --> 00:00:14,340
+So if you were to look at your tabs right now, you can see we get this really ugly title Local host
+
+3
+00:00:14,340 --> 00:00:18,970
+3002 slash city slash auto slash car slash make.
+
+4
+00:00:18,990 --> 00:00:26,820
+Not a very pretty title and same over here you know nothing about this is pretty at all So I want to
+
+5
+00:00:26,820 --> 00:00:34,560
+go ahead and actually change the titles and it is going to be remarkably easy to do with NOx three.
+
+6
+00:00:35,070 --> 00:00:42,660
+So let's go over here and I'm going to go to the let's go to rates over here.
+
+7
+00:00:42,660 --> 00:00:44,400
+Let's go to our very first page.
+
+8
+00:00:44,400 --> 00:00:50,310
+And I want to change the title so that as soon as you go to the home page, it should say car trader.
+
+9
+00:00:50,370 --> 00:00:54,810
+So over here, what we're going to do is we're going to create a script tag.
+
+10
+00:00:54,810 --> 00:00:56,250
+We're going to say setup.
+
+11
+00:00:56,250 --> 00:01:01,740
+Are we going to use a built in NOx composable called use head?
+
+12
+00:01:01,830 --> 00:01:06,420
+We're going to go ahead and invoke this and then we're going to pass in a bunch of options.
+
+13
+00:01:06,420 --> 00:01:10,170
+Specifically, we're going to pass in the title option.
+
+14
+00:01:10,170 --> 00:01:14,840
+And then over here we're going to say car trader like so.
+
+15
+00:01:14,850 --> 00:01:17,580
+And that's actually all it is that we need to do.
+
+16
+00:01:17,580 --> 00:01:23,430
+So now, if you look at your actual tab over here, you can see that it says car trader rather than
+
+17
+00:01:23,730 --> 00:01:25,260
+localhost 3000.
+
+18
+00:01:25,260 --> 00:01:27,960
+So now let's go ahead and actually do the exact same thing over here.
+
+19
+00:01:27,960 --> 00:01:33,780
+So I'm going to go to Ottawa and I am going to search over here and we're not getting anything.
+
+20
+00:01:33,780 --> 00:01:34,380
+And there we go.
+
+21
+00:01:34,380 --> 00:01:35,950
+I'm not sure why that was happening.
+
+22
+00:01:35,950 --> 00:01:37,080
+Let's go back here.
+
+23
+00:01:37,350 --> 00:01:38,600
+Let's search Ottawa.
+
+24
+00:01:38,690 --> 00:01:39,300
+There we go.
+
+25
+00:01:39,300 --> 00:01:42,000
+So it was just a little glitch there.
+
+26
+00:01:42,000 --> 00:01:46,410
+And I actually want to change this so that well, what do we have over here?
+
+27
+00:01:46,410 --> 00:01:52,230
+So if I go to Toronto, what I want it to have, I want it to say cars in Ottawa.
+
+28
+00:01:52,230 --> 00:01:55,170
+So cars in Ottawa, that's what I wanted to say.
+
+29
+00:01:55,860 --> 00:02:06,450
+So let's go over here to that particular page, which is going to be this page right here.
+
+30
+00:02:06,540 --> 00:02:10,289
+So we're going to go to this page and we're going to go.
+
+31
+00:02:11,380 --> 00:02:12,220
+Over here.
+
+32
+00:02:12,790 --> 00:02:16,390
+Are we going to say script setup?
+
+33
+00:02:17,500 --> 00:02:20,620
+And we're going to go ahead and just say use head.
+
+34
+00:02:23,400 --> 00:02:27,120
+And we're going to say title and this is going to be a dynamic title.
+
+35
+00:02:27,120 --> 00:02:32,730
+So we're going to say cars and then in and then auto, well, we're going to grab it from the root.
+
+36
+00:02:32,730 --> 00:02:38,880
+So we're going to say const root is equal to use root like so.
+
+37
+00:02:39,270 --> 00:02:44,010
+And we're going to say cars in and then we're going to say root.
+
+38
+00:02:44,100 --> 00:02:51,150
+And to actually grab the city, we're going to say slash params and then slash city, because that's
+
+39
+00:02:51,150 --> 00:02:54,780
+what we called it here city, the variable name.
+
+40
+00:02:54,780 --> 00:03:00,480
+And we're also going to capitalize this in case it's not capitalized, we're going to say dot two and
+
+41
+00:03:00,480 --> 00:03:04,650
+then we're going to say oh two.
+
+42
+00:03:06,590 --> 00:03:11,340
+Okay, So we can't necessarily there's no function to capitalize this.
+
+43
+00:03:11,340 --> 00:03:12,480
+So this is what we're going to do.
+
+44
+00:03:12,480 --> 00:03:14,220
+We're going to do this on the fly here.
+
+45
+00:03:14,250 --> 00:03:16,260
+We're going to say JavaScript.
+
+46
+00:03:17,410 --> 00:03:27,180
+Gonna say JavaScript function to capitalize, to capitalize, or we're just going to say that.
+
+47
+00:03:27,190 --> 00:03:28,570
+Okay, let's see if that works.
+
+48
+00:03:28,690 --> 00:03:30,490
+So we're going to go to Stack Overflow.
+
+49
+00:03:32,640 --> 00:03:33,870
+And.
+
+50
+00:03:35,830 --> 00:03:36,690
+All right.
+
+51
+00:03:36,700 --> 00:03:39,910
+This is going to capitalize.
+
+52
+00:03:40,210 --> 00:03:40,660
+All right.
+
+53
+00:03:40,660 --> 00:03:42,970
+So that's going to capitalize the first letter.
+
+54
+00:03:43,180 --> 00:03:44,740
+Not really what I want here.
+
+55
+00:03:44,740 --> 00:03:46,720
+I wanted to capitalize everything.
+
+56
+00:03:46,720 --> 00:03:48,460
+So capitalize.
+
+57
+00:03:48,460 --> 00:03:49,810
+Let's just say title.
+
+58
+00:03:52,590 --> 00:03:56,570
+Convert string to tidal case with JavaScript.
+
+59
+00:03:56,580 --> 00:03:57,150
+All right.
+
+60
+00:03:57,840 --> 00:03:58,620
+So let's see here.
+
+61
+00:03:58,620 --> 00:03:58,820
+Okay.
+
+62
+00:03:58,830 --> 00:04:00,120
+This looks like a good solution.
+
+63
+00:04:00,120 --> 00:04:07,350
+So we'll just say to Title case, just grab this function over here and I am going to just put this
+
+64
+00:04:07,350 --> 00:04:12,660
+function right here and we're going to say.
+
+65
+00:04:13,760 --> 00:04:20,029
+We're just going to wrap this with two title case to title case.
+
+66
+00:04:20,750 --> 00:04:23,270
+I'm going to go ahead and add that in there.
+
+67
+00:04:23,390 --> 00:04:23,960
+Okay.
+
+68
+00:04:23,960 --> 00:04:26,300
+So now we should see.
+
+69
+00:04:27,580 --> 00:04:29,410
+If I were to go back here.
+
+70
+00:04:29,410 --> 00:04:31,980
+You see, we get cars in Ottawa.
+
+71
+00:04:31,990 --> 00:04:34,420
+But actually I want to make this a little bit more dynamic.
+
+72
+00:04:34,420 --> 00:04:40,360
+So if I actually add the make instead of having cars, I want to say something like Buicks in Ottawa.
+
+73
+00:04:40,360 --> 00:04:43,500
+So if I add Buicks, it should say Buicks in Ottawa.
+
+74
+00:04:43,510 --> 00:04:45,940
+So this actually is going to be pretty easy as well.
+
+75
+00:04:45,940 --> 00:04:49,720
+So we're just going to go over here and we're just going to say dollar sign.
+
+76
+00:04:49,720 --> 00:04:56,140
+And this time we need to check if the route dot params dot MC is even there.
+
+77
+00:04:56,140 --> 00:05:03,130
+So if we have the MC itself, then what we want to do is we want to say to title case and actually pass
+
+78
+00:05:03,130 --> 00:05:06,310
+in the route dot params dot.
+
+79
+00:05:06,310 --> 00:05:08,440
+Make else.
+
+80
+00:05:08,440 --> 00:05:12,520
+What we want to do is we'll just say cars, just generic cars.
+
+81
+00:05:12,880 --> 00:05:13,210
+All right.
+
+82
+00:05:13,210 --> 00:05:15,490
+So that's pretty much all it is that we need to do.
+
+83
+00:05:15,490 --> 00:05:21,190
+So I'm just going to kind of let me zoom out of here a bit so you can really see that zoom out so you
+
+84
+00:05:21,190 --> 00:05:22,960
+can kind of see the whole thing.
+
+85
+00:05:22,960 --> 00:05:25,720
+And actually if I save, you can see that auto saved it.
+
+86
+00:05:25,720 --> 00:05:27,730
+So this is how it should look.
+
+87
+00:05:27,730 --> 00:05:30,280
+So now you can see it says cars and auto.
+
+88
+00:05:30,340 --> 00:05:35,830
+But if I go to slash Buicks, it says Buicks in auto or Buick in Ottawa, plural.
+
+89
+00:05:36,040 --> 00:05:38,770
+Okay, So this is great.
+
+90
+00:05:38,770 --> 00:05:45,430
+And now the last thing that I want to do is whenever I click on a particular a particular car, it should
+
+91
+00:05:45,430 --> 00:05:52,210
+take me to the slash car and then slash whatever, let's say was Buick and then five.
+
+92
+00:05:52,330 --> 00:05:56,260
+So this is just going to be the actual name of the car itself.
+
+93
+00:05:56,260 --> 00:06:02,960
+So let's go over here and we're going to also use the use head for this.
+
+94
+00:06:02,960 --> 00:06:05,770
+So what does this say script set up?
+
+95
+00:06:06,960 --> 00:06:12,570
+And we'll say use head and title.
+
+96
+00:06:12,600 --> 00:06:17,790
+And this one, we're going to say, let's go ahead and just say const root.
+
+97
+00:06:20,460 --> 00:06:22,920
+Is equal to use route.
+
+98
+00:06:24,820 --> 00:06:27,580
+And then over here, we're just going to say the name of the car itself.
+
+99
+00:06:27,580 --> 00:06:36,190
+So it's just going to be routes, dot params, dot and params dot.
+
+100
+00:06:36,190 --> 00:06:39,630
+And then the the actual name of the car, which is the name.
+
+101
+00:06:39,640 --> 00:06:43,110
+Now of course I'm going to want to title case this as well.
+
+102
+00:06:43,120 --> 00:06:49,720
+So what we're going to do is we're going to grab this function and what we'll think of we'll have a
+
+103
+00:06:49,720 --> 00:06:54,700
+better way if actually putting this function in one place instead of having it in just, you know,
+
+104
+00:06:54,790 --> 00:06:56,710
+copying and pasting it throughout components.
+
+105
+00:06:56,710 --> 00:06:58,090
+But for now, we'll just do that.
+
+106
+00:06:58,390 --> 00:07:04,600
+So we're going to go over here and we'll just title case this and now you can say Buick right over here.
+
+107
+00:07:04,720 --> 00:07:07,180
+Okay, So this is looking pretty, pretty good.
+
+108
+00:07:07,180 --> 00:07:11,770
+And that actually concludes the section on file base routing.
+

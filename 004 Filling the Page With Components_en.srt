@@ -1,0 +1,200 @@
+1
+00:00:00,360 --> 00:00:05,770
+So now let's go ahead and actually start populating this with all of the components that we need.
+
+2
+00:00:05,790 --> 00:00:08,320
+So, of course, we first need the nav bar.
+
+3
+00:00:08,340 --> 00:00:12,020
+So let's go over to our file.
+
+4
+00:00:12,030 --> 00:00:18,510
+And we have already well created that nav bar component so we can just now very simply just say nav
+
+5
+00:00:18,510 --> 00:00:19,000
+bar.
+
+6
+00:00:19,020 --> 00:00:22,770
+So we can say nav bar like so.
+
+7
+00:00:22,890 --> 00:00:25,200
+And now we should see our nav bar.
+
+8
+00:00:25,260 --> 00:00:30,090
+And now what we need to do is all the other HTML elements for our component.
+
+9
+00:00:30,090 --> 00:00:33,060
+And what I'm going to do is I'm going to go to the car's HTML.
+
+10
+00:00:33,090 --> 00:00:35,740
+You can see here where we have the car page.
+
+11
+00:00:35,760 --> 00:00:40,550
+I'm going to go ahead and just copy everything between the car page comments.
+
+12
+00:00:40,560 --> 00:00:42,500
+So let's go ahead and just copy that.
+
+13
+00:00:42,510 --> 00:00:48,130
+And we're going to go over here to make and we're going to go ahead and paste that in.
+
+14
+00:00:48,150 --> 00:00:48,870
+And there we go.
+
+15
+00:00:48,870 --> 00:00:52,630
+So now you can see we have this and we only have one card for now.
+
+16
+00:00:52,650 --> 00:00:54,660
+But later on, we'll render more.
+
+17
+00:00:54,690 --> 00:01:00,120
+Now, of course, what I want to also do is separate a lot of these things into their own component.
+
+18
+00:01:00,120 --> 00:01:02,710
+So let's begin with the car sidebar.
+
+19
+00:01:02,730 --> 00:01:09,270
+So over here, let's just grab everything in between the car sidebar and we're just going to go ahead
+
+20
+00:01:09,270 --> 00:01:11,530
+and just cut it out for now.
+
+21
+00:01:11,550 --> 00:01:13,710
+This is going to be this thing right over here.
+
+22
+00:01:14,730 --> 00:01:18,000
+And we're going to go to we're going to go over here.
+
+23
+00:01:18,030 --> 00:01:21,720
+We're going to go inside of the components directory, inside of car.
+
+24
+00:01:21,750 --> 00:01:30,660
+We're going to create a side bar view file and we're going to say templates and we're going to go ahead
+
+25
+00:01:30,660 --> 00:01:32,790
+and just paste that in there.
+
+26
+00:01:32,790 --> 00:01:41,730
+And then over here we're going to call car sidebar, very simple car side bar like.
+
+27
+00:01:41,730 --> 00:01:44,970
+So we can also remove these comments.
+
+28
+00:01:45,770 --> 00:01:48,710
+Okay, so that looks pretty good to me.
+
+29
+00:01:48,710 --> 00:01:50,390
+So I'm going to go ahead and just save that.
+
+30
+00:01:50,390 --> 00:01:53,000
+And now we have we still have everything looking the same.
+
+31
+00:01:53,300 --> 00:01:57,140
+Another thing that I do want to add now is two more components.
+
+32
+00:01:57,140 --> 00:02:03,080
+One for the car cards and then one for the car card, the actual card itself.
+
+33
+00:02:03,290 --> 00:02:07,910
+So the card cards is actually going to be a one div component.
+
+34
+00:02:07,910 --> 00:02:11,960
+So let's go over here and let's go over here.
+
+35
+00:02:11,960 --> 00:02:14,110
+We're going to say cards.
+
+36
+00:02:14,120 --> 00:02:15,710
+So this is plural.
+
+37
+00:02:15,710 --> 00:02:21,410
+And then over here we'll also create another one, which is going to be card singular.
+
+38
+00:02:22,010 --> 00:02:24,860
+All right, So let's go over here for the cards.
+
+39
+00:02:24,860 --> 00:02:29,210
+It's just one div element right over here, which is going to be v full.
+
+40
+00:02:29,480 --> 00:02:33,290
+So cards, we're just say template and then V full.
+
+41
+00:02:33,290 --> 00:02:34,160
+That's it.
+
+42
+00:02:34,160 --> 00:02:38,180
+And then for the cards, we're going to grab everything in here.
+
+43
+00:02:39,590 --> 00:02:41,360
+Just grab all of that.
+
+44
+00:02:43,410 --> 00:02:49,770
+Let's cut that out and let's just create a template and we're going to go ahead and paste that in there.
+
+45
+00:02:50,310 --> 00:02:54,290
+And then inside of the cards, we're going to render that just one card for now.
+
+46
+00:02:54,300 --> 00:02:57,300
+So we're going to say core card like so.
+
+47
+00:02:57,330 --> 00:03:04,830
+And so now over here, we can actually completely get rid of all of this and very simply just say car
+
+48
+00:03:05,160 --> 00:03:08,940
+and then card and then save that.
+
+49
+00:03:09,120 --> 00:03:11,270
+And theoretically, that should be it.
+
+50
+00:03:11,280 --> 00:03:14,640
+So you can see here that everything is working A-OK.
+
