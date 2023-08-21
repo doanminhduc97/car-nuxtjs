@@ -1,0 +1,312 @@
+1
+00:00:00,150 --> 00:00:06,240
+All right, everybody in this section we're going to do is focus in on error handling.
+
+2
+00:00:06,240 --> 00:00:12,990
+So there are multiple different things that can occur within our application that could trigger an error.
+
+3
+00:00:13,020 --> 00:00:16,050
+Now, we're going to look at a multiple throughout the section.
+
+4
+00:00:16,050 --> 00:00:23,460
+However, I'm going to go ahead and focus in on one very specific and obvious error in this video.
+
+5
+00:00:23,610 --> 00:00:32,580
+And that is, well, what if a user decides to go to a page that does not really exist within our pages
+
+6
+00:00:32,580 --> 00:00:33,420
+directory?
+
+7
+00:00:33,420 --> 00:00:39,420
+So right now we all really only defined three different routes the home page and the car display page
+
+8
+00:00:39,420 --> 00:00:41,820
+as well as the car detail page.
+
+9
+00:00:41,820 --> 00:00:47,940
+But what if the user decides to go and they can very easily do this to, you know, local host, 3000
+
+10
+00:00:47,940 --> 00:00:51,450
+slash banana and I'm going to go ahead and press enter.
+
+11
+00:00:51,450 --> 00:00:58,500
+And you can see here this actually triggers an error and specifically it triggers a404 error.
+
+12
+00:00:58,500 --> 00:01:00,420
+And that's exactly what this is.
+
+13
+00:01:00,420 --> 00:01:04,319
+So if you know your status code, four or four stands for not found.
+
+14
+00:01:04,319 --> 00:01:11,310
+And specifically in this case, we have a page not found error and we do not understand this path right
+
+15
+00:01:11,310 --> 00:01:12,240
+over here.
+
+16
+00:01:12,330 --> 00:01:17,730
+Now, Knox is actually nice enough to give us this page right off the bat.
+
+17
+00:01:17,730 --> 00:01:21,510
+So any time we get this particular error, this is what we get.
+
+18
+00:01:21,510 --> 00:01:25,380
+And we have this nice, neat button that will allow us to go back home.
+
+19
+00:01:25,680 --> 00:01:33,570
+However, in most applications, we're not going to want to have this kind of default nux page.
+
+20
+00:01:33,570 --> 00:01:37,020
+We're going to probably want to have our own custom page.
+
+21
+00:01:37,440 --> 00:01:41,010
+So how can we create our own custom error page?
+
+22
+00:01:41,010 --> 00:01:42,750
+Well, this is what we're going to do.
+
+23
+00:01:42,750 --> 00:01:47,670
+So write in the root directory, not in the page's directory.
+
+24
+00:01:47,670 --> 00:01:52,470
+In the root directory we're going to create a file called error dot to view.
+
+25
+00:01:52,470 --> 00:01:54,090
+And the name is very important.
+
+26
+00:01:54,090 --> 00:01:56,280
+It has to be called error dot view.
+
+27
+00:01:56,280 --> 00:01:59,310
+And then in here we're going to define our template.
+
+28
+00:01:59,310 --> 00:02:01,620
+So we're going to say div.
+
+29
+00:02:01,620 --> 00:02:07,130
+And then over here we're going to go ahead and say H one and we're just going to say error for now.
+
+30
+00:02:07,140 --> 00:02:12,870
+And what ends up happening is any time we have an error, whether it's a404 page error or any other
+
+31
+00:02:12,870 --> 00:02:19,470
+error that we might potentially have, it's going to go ahead and show this template right over here.
+
+32
+00:02:19,470 --> 00:02:24,420
+And to prove it to you, if I were to refresh, you can see now we have this blank screen and if I were
+
+33
+00:02:24,420 --> 00:02:28,290
+to zoom in, you can see this error state right over here.
+
+34
+00:02:28,470 --> 00:02:32,070
+So now what we can do is we can actually just make this a little bit prettier.
+
+35
+00:02:32,070 --> 00:02:34,200
+So let's just add a little bit of style.
+
+36
+00:02:34,200 --> 00:02:37,290
+So I'm going to say flex height screen.
+
+37
+00:02:37,290 --> 00:02:46,110
+We'll say justify center items, item center, and that should center everything right in the middle,
+
+38
+00:02:46,110 --> 00:02:47,760
+which is pretty nice for me.
+
+39
+00:02:47,760 --> 00:02:52,830
+And we're also, say flex calls just so we can change the direction.
+
+40
+00:02:53,400 --> 00:03:00,690
+And then over here, we can have text Excel, just make it nice and big over here where I'll just change
+
+41
+00:03:00,690 --> 00:03:02,070
+it to 404.
+
+42
+00:03:02,070 --> 00:03:04,200
+So we'll have 404 like so.
+
+43
+00:03:04,290 --> 00:03:08,050
+And we can also small.
+
+44
+00:03:08,160 --> 00:03:11,820
+We'll can change the color if we want, but I don't really want to do that.
+
+45
+00:03:11,820 --> 00:03:15,000
+And over here we can also have a message.
+
+46
+00:03:15,000 --> 00:03:25,500
+So some sort of message so I can say class mt7 so we can have some margin on top and then Excel or text
+
+47
+00:03:25,500 --> 00:03:26,520
+for Excel.
+
+48
+00:03:26,550 --> 00:03:31,530
+And we'll just say Page not found something like that.
+
+49
+00:03:31,530 --> 00:03:33,300
+So Page not found.
+
+50
+00:03:33,300 --> 00:03:38,310
+And then over here, let's also have a button that will allow us to go back.
+
+51
+00:03:39,090 --> 00:03:40,710
+So go back.
+
+52
+00:03:40,710 --> 00:03:46,380
+So I know we pretty much completely replicated what they had here.
+
+53
+00:03:46,380 --> 00:03:49,680
+So and their styles were definitely a lot better than us.
+
+54
+00:03:49,680 --> 00:03:56,250
+But what I'm trying to show you is that we can have our own custom page by utilizing this error dot
+
+55
+00:03:56,250 --> 00:03:56,850
+view.
+
+56
+00:03:56,850 --> 00:04:00,690
+So let's go ahead and actually finish this off and then we'll talk about another thing a little bit
+
+57
+00:04:00,690 --> 00:04:01,200
+later.
+
+58
+00:04:01,200 --> 00:04:03,750
+So I'm going to just go ahead over here in the button.
+
+59
+00:04:03,750 --> 00:04:05,760
+Let's just make this nice and rounded.
+
+60
+00:04:06,510 --> 00:04:23,400
+Let's also add a margin top seven E to excel B, g dash blue 400 px7p, y four and then text white.
+
+61
+00:04:23,700 --> 00:04:25,290
+So we're going to go ahead and add that.
+
+62
+00:04:25,290 --> 00:04:27,450
+And now we have this cool little button.
+
+63
+00:04:27,450 --> 00:04:29,760
+And what I want to do is I'm going to click on this button.
+
+64
+00:04:29,760 --> 00:04:32,760
+I want to go back to the home page and we know how to do this now.
+
+65
+00:04:32,760 --> 00:04:37,170
+So we're going to say script setup, let's create a function.
+
+66
+00:04:37,170 --> 00:04:40,140
+I'm going to say const handle.
+
+67
+00:04:40,470 --> 00:04:48,180
+I'm going to say handle, return, handle, return or what we'll say handle error.
+
+68
+00:04:48,840 --> 00:04:53,640
+And then over here, we'll just very simply say, I want to go back.
+
+69
+00:04:53,640 --> 00:04:57,780
+So I'm just gonna say navigate to I'm going to say Slash.
+
+70
+00:04:58,110 --> 00:04:59,610
+So we're going to go over here.
+
+71
+00:05:00,540 --> 00:05:07,350
+And we're going to say it's click or we're going to go and we're going to say, handle air.
+
+72
+00:05:10,340 --> 00:05:10,700
+All right.
+
+73
+00:05:10,700 --> 00:05:11,960
+So let's go ahead and save this.
+
+74
+00:05:11,960 --> 00:05:14,390
+And now if I click on it, you can see I go right back.
+
+75
+00:05:14,390 --> 00:05:20,300
+So again, I have created basically a much uglier version of the original.
+
+76
+00:05:20,330 --> 00:05:23,210
+However, again, we can customize it to the way that we want.
+
+77
+00:05:23,240 --> 00:05:30,770
+Maybe for our car website we have like a sad car face or something like that, so we can customize it
+
+78
+00:05:30,770 --> 00:05:32,480
+the way that we want.
+

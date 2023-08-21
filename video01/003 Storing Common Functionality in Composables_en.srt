@@ -1,0 +1,152 @@
+1
+00:00:01,290 --> 00:00:06,510
+Another thing that I would like to clean up is this right over here?
+
+2
+00:00:06,510 --> 00:00:10,710
+So you can see that this function, we're using it in multiple different places.
+
+3
+00:00:10,710 --> 00:00:14,010
+So we're using it right over here in this page.
+
+4
+00:00:14,020 --> 00:00:17,040
+We're also using it right over here in this page.
+
+5
+00:00:17,040 --> 00:00:22,860
+So what I would like to do is kind of abstract it and put it in one file so we can just use it and import
+
+6
+00:00:22,860 --> 00:00:25,440
+it into the files that we need.
+
+7
+00:00:25,440 --> 00:00:30,480
+And what we can do is we can actually store this function, this functionality that we're going to utilize
+
+8
+00:00:30,480 --> 00:00:33,860
+throughout multiple different components or pages or both.
+
+9
+00:00:33,870 --> 00:00:40,710
+We can actually store them in composable so composable sort of places where we can store state as well
+
+10
+00:00:40,710 --> 00:00:43,680
+as a different pieces of functionality.
+
+11
+00:00:43,680 --> 00:00:48,780
+So I'm going to go over here, I'm going to create a composable directory and it has to be called composable
+
+12
+00:00:48,780 --> 00:00:53,910
+because Knox is going to understand that all of the different files in here are composable and do the
+
+13
+00:00:53,910 --> 00:00:58,230
+auto importing and I'm going to call this composable file use utility.
+
+14
+00:00:58,230 --> 00:01:01,050
+So typically composable start with use.
+
+15
+00:01:01,050 --> 00:01:04,290
+And over here I'm going to say use U DT Lee.
+
+16
+00:01:04,500 --> 00:01:06,690
+I'm a I'm trying to spell this correctly.
+
+17
+00:01:06,690 --> 00:01:07,320
+Utilities.
+
+18
+00:01:07,320 --> 00:01:08,580
+I think that's how you spell it.
+
+19
+00:01:08,580 --> 00:01:15,330
+And then when I say dot JS, so this is just going to be a regular function that we are going to export.
+
+20
+00:01:15,330 --> 00:01:21,870
+So we're going to say use utilities and this is just going to be a regular function like so and we're
+
+21
+00:01:21,870 --> 00:01:27,660
+going to grab this piece of functionality which is going to be the two title case and we're going to
+
+22
+00:01:27,660 --> 00:01:28,920
+place that in there.
+
+23
+00:01:28,920 --> 00:01:31,650
+And then at the very bottom of the function, we're going to return it.
+
+24
+00:01:31,650 --> 00:01:33,720
+So we're going to say to Title case.
+
+25
+00:01:33,780 --> 00:01:36,600
+So everything should be working A-OK now.
+
+26
+00:01:36,600 --> 00:01:41,730
+But now what we can do is instead of defining the function over here, what we can do is actually utilize
+
+27
+00:01:41,730 --> 00:01:49,020
+that composable so we can say const curly braces for do structuring, use utilities, and we can go
+
+28
+00:01:49,020 --> 00:01:54,900
+ahead and invoke it and we can actually get to title case that to title case function.
+
+29
+00:01:54,900 --> 00:01:57,330
+And now we can go ahead and remove this.
+
+30
+00:01:57,330 --> 00:02:03,180
+And now if I were to actually refresh, you can see that everything is still capitalized in the tab
+
+31
+00:02:03,210 --> 00:02:05,370
+and we can actually do the exact same thing.
+
+32
+00:02:05,370 --> 00:02:11,220
+Now, in the other case where we use it, which is going to be the this file right over here.
+
+33
+00:02:12,150 --> 00:02:15,060
+So over here we have use title case.
+
+34
+00:02:15,690 --> 00:02:18,810
+And we use that right over here in the use head as well.
+
+35
+00:02:18,840 --> 00:02:24,090
+So instead, I'm going to go ahead and just paste that in there and I'm going to remove this, save
+
+36
+00:02:24,090 --> 00:02:28,470
+that, and I'm going to go to G.
+
+37
+00:02:29,560 --> 00:02:35,950
+Let's go to slash car slash Jeep slash one, and you can see that Jeep is still capitalized.
+
+38
+00:02:35,950 --> 00:02:43,030
+So we can use comparables to kind of abstract away all of this repetitive code, which is always great.
+

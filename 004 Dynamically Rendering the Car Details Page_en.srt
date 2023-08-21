@@ -1,0 +1,412 @@
+1
+00:00:00,060 --> 00:00:07,680
+In order to actually customize the data, we must search for the particular object that has the ID that
+
+2
+00:00:07,680 --> 00:00:10,320
+is present right over here.
+
+3
+00:00:10,350 --> 00:00:14,990
+So let's go ahead and actually extract that ID first and foremost.
+
+4
+00:00:15,000 --> 00:00:17,340
+So let's go to our pages directory.
+
+5
+00:00:17,340 --> 00:00:21,720
+So components, composable files right here, pages.
+
+6
+00:00:21,720 --> 00:00:25,680
+And I'm going to go to car, just go to this particular page right over here.
+
+7
+00:00:25,680 --> 00:00:30,040
+And you can see that we're actually already using this use route.
+
+8
+00:00:30,060 --> 00:00:31,080
+Now let's use route.
+
+9
+00:00:31,080 --> 00:00:37,260
+We're extracting the name from it, but we can also extract the I D And just to prove this to you,
+
+10
+00:00:37,260 --> 00:00:44,100
+I'm going to go ahead and right over here I'm just going to say route dot params dot ID, I remember
+
+11
+00:00:44,100 --> 00:00:46,170
+that's because we called it ID right here.
+
+12
+00:00:46,170 --> 00:00:50,190
+And I can see right here very faintly we have a two.
+
+13
+00:00:50,190 --> 00:00:56,970
+Okay, so we got the ID, but now what I want to do is I want to well search for that particular car
+
+14
+00:00:56,970 --> 00:01:05,900
+by its ID, so let's actually go ahead and create a computed value here and I'm going to say const and
+
+15
+00:01:05,910 --> 00:01:13,410
+I'll say car and I'll say that this is going to be equal to computed, computed.
+
+16
+00:01:13,590 --> 00:01:17,430
+And notice again that we can auto import computed.
+
+17
+00:01:17,430 --> 00:01:22,890
+And what we're going to do here in this function is very simply iterate over all of those cars and find
+
+18
+00:01:22,890 --> 00:01:26,430
+the one that has the ID that is within this route.
+
+19
+00:01:26,430 --> 00:01:32,190
+So to actually get access to those cars, we'll just say cars from or not from.
+
+20
+00:01:32,340 --> 00:01:33,820
+We'll just use the composable.
+
+21
+00:01:33,820 --> 00:01:36,150
+We'll just say use cars like.
+
+22
+00:01:36,150 --> 00:01:38,520
+So we're going to go ahead and invoke that.
+
+23
+00:01:38,520 --> 00:01:48,690
+And over here very simply, we'll just do is we'll return cars dot find and over here we'll say see.
+
+24
+00:01:49,740 --> 00:01:52,050
+And we shall return.
+
+25
+00:01:52,500 --> 00:01:57,360
+The C dot id is equal to.
+
+26
+00:01:57,390 --> 00:02:03,180
+We're going to do pass int because this ID even though it is really a number once we extracted from
+
+27
+00:02:03,180 --> 00:02:05,660
+the parameters, it will be a type of string.
+
+28
+00:02:05,670 --> 00:02:09,300
+So we have to parse enter into it.
+
+29
+00:02:09,389 --> 00:02:16,050
+And then over here we're going to say just root dot params, dot ID, All right.
+
+30
+00:02:16,050 --> 00:02:17,700
+That's all it is that we need to do.
+
+31
+00:02:18,300 --> 00:02:20,190
+And now what we can do here.
+
+32
+00:02:21,060 --> 00:02:24,540
+Is very simply just grab Oh, my goodness.
+
+33
+00:02:24,540 --> 00:02:26,940
+I'm just trying to grab whatever I give up.
+
+34
+00:02:27,390 --> 00:02:28,230
+Let's go over here.
+
+35
+00:02:28,230 --> 00:02:30,470
+I'm just going to grab the car here for now.
+
+36
+00:02:30,600 --> 00:02:31,740
+Let's go ahead and save that.
+
+37
+00:02:31,810 --> 00:02:34,330
+You can see we do indeed get the card details.
+
+38
+00:02:34,350 --> 00:02:34,740
+All right.
+
+39
+00:02:34,740 --> 00:02:39,610
+So let's actually go ahead and only render this if we have the car.
+
+40
+00:02:39,630 --> 00:02:44,970
+So let's just go here and just say if car and if we don't have the car, we can just render something
+
+41
+00:02:44,970 --> 00:02:45,330
+else.
+
+42
+00:02:45,330 --> 00:02:47,580
+And I'll show you exactly what we're going to do later on.
+
+43
+00:02:47,610 --> 00:02:53,640
+So now what we need to do is unfortunately pass in a lot of different props.
+
+44
+00:02:53,640 --> 00:02:56,280
+Now we can pass in the car prop to every single one.
+
+45
+00:02:56,280 --> 00:02:58,140
+That is completely fine.
+
+46
+00:02:58,140 --> 00:03:06,360
+And actually it's probably not the best idea being that, you know, some some of these components don't
+
+47
+00:03:06,360 --> 00:03:09,330
+really need all of the information.
+
+48
+00:03:09,330 --> 00:03:15,810
+So over here, for example, we can probably pass the whole car component into the car hero because
+
+49
+00:03:15,810 --> 00:03:17,670
+the car hero has a lot of information.
+
+50
+00:03:17,670 --> 00:03:25,050
+The the it has the image, it has the the name, the seats, the miles, the the price.
+
+51
+00:03:25,050 --> 00:03:28,500
+You know, it doesn't really matter if you pass in a little bit more information.
+
+52
+00:03:28,920 --> 00:03:31,530
+But for the other ones, we don't really need to pass everything.
+
+53
+00:03:31,530 --> 00:03:34,920
+We really just need to pass maybe the features.
+
+54
+00:03:34,920 --> 00:03:39,040
+So the car dot features like so.
+
+55
+00:03:39,060 --> 00:03:40,830
+And then over here.
+
+56
+00:03:42,050 --> 00:03:43,490
+We'll just pass a description.
+
+57
+00:03:43,490 --> 00:03:45,380
+So we'll say description.
+
+58
+00:03:45,590 --> 00:03:49,970
+And then over here we'll say car dot description.
+
+59
+00:03:50,180 --> 00:03:52,450
+So that's pretty much all it is that we need to pass in.
+
+60
+00:03:52,460 --> 00:03:57,040
+So now let's actually utilize these within the actual components themselves.
+
+61
+00:03:57,050 --> 00:03:59,360
+So let's go over here to components car.
+
+62
+00:03:59,390 --> 00:04:05,990
+Let's begin with the car hero and actually car detail hero is specifically what we're going to be using.
+
+63
+00:04:05,990 --> 00:04:16,100
+So let's go over here to script setup and we're going to say cons, props, and we'll say for this,
+
+64
+00:04:16,100 --> 00:04:20,420
+this is going to be defined props.
+
+65
+00:04:20,420 --> 00:04:23,120
+So define props.
+
+66
+00:04:23,810 --> 00:04:29,340
+And we'll just say car is going to be an object.
+
+67
+00:04:29,360 --> 00:04:33,230
+So again, over here now what we can do is very simply.
+
+68
+00:04:34,430 --> 00:04:39,080
+Extract this so it can be car dot URL, I believe it's called.
+
+69
+00:04:39,200 --> 00:04:45,470
+And now if I were to refresh this, you can see now we actually get the URL itself over here.
+
+70
+00:04:45,470 --> 00:04:53,960
+We can say car dot name over here, we can say car dot seats over here.
+
+71
+00:04:53,960 --> 00:04:56,150
+We can just talk about how many miles.
+
+72
+00:04:56,150 --> 00:04:58,820
+So a car dot miles.
+
+73
+00:04:58,820 --> 00:05:06,170
+And lastly here, car dot price.
+
+74
+00:05:06,470 --> 00:05:06,950
+All right.
+
+75
+00:05:06,950 --> 00:05:10,190
+So that's pretty much it for that.
+
+76
+00:05:10,700 --> 00:05:13,100
+So now let me just copy this.
+
+77
+00:05:13,880 --> 00:05:16,220
+Let's go to the attributes.
+
+78
+00:05:18,250 --> 00:05:26,860
+So the attributes and really all it is is a features array, so features and we can just say array for
+
+79
+00:05:26,860 --> 00:05:27,520
+this.
+
+80
+00:05:27,520 --> 00:05:32,680
+And just to show you what the features are, it's just an array of all of the different features of
+
+81
+00:05:32,680 --> 00:05:33,580
+the cars.
+
+82
+00:05:33,670 --> 00:05:39,610
+So what we can do now is we can go back to attributes and then right here we can just iterate over this
+
+83
+00:05:39,610 --> 00:05:43,150
+with av4, so we can just say V four.
+
+84
+00:05:45,330 --> 00:05:50,790
+And we can say feature in features.
+
+85
+00:05:50,790 --> 00:05:55,580
+And each feature is going to be unique, so we can use the actual feature itself as a key.
+
+86
+00:05:55,590 --> 00:05:58,440
+So you can just say feature.
+
+87
+00:05:58,830 --> 00:06:03,900
+And then over here we can say feature.
+
+88
+00:06:04,590 --> 00:06:06,600
+And let's just do a quick little refresh.
+
+89
+00:06:06,600 --> 00:06:07,060
+There we go.
+
+90
+00:06:07,080 --> 00:06:09,090
+So now we get all of those different features.
+
+91
+00:06:09,120 --> 00:06:11,160
+Last thing we need is the description.
+
+92
+00:06:11,160 --> 00:06:15,370
+So let's go here and let's go back to the attributes.
+
+93
+00:06:15,390 --> 00:06:16,590
+Copy this.
+
+94
+00:06:17,190 --> 00:06:18,420
+Paste that in there.
+
+95
+00:06:22,000 --> 00:06:22,660
+All right.
+
+96
+00:06:22,660 --> 00:06:31,570
+And this is just going to be a string, so let's just grab that and description like so.
+
+97
+00:06:31,600 --> 00:06:35,640
+So now I'm going to go ahead and just remove this and I'll just say description.
+
+98
+00:06:36,260 --> 00:06:37,670
+Description.
+
+99
+00:06:37,720 --> 00:06:40,000
+So I'm going to go and save that.
+
+100
+00:06:40,000 --> 00:06:40,570
+And there we go.
+
+101
+00:06:40,600 --> 00:06:43,540
+Now, you can see we have this description.
+
+102
+00:06:43,540 --> 00:06:45,500
+So this is looking pretty good.
+
+103
+00:06:45,520 --> 00:06:48,730
+We have made everything nice and dynamic.
+

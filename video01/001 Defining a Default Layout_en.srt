@@ -1,0 +1,368 @@
+1
+00:00:00,390 --> 00:00:03,480
+All right, everybody, welcome to a brand new section.
+
+2
+00:00:03,480 --> 00:00:10,140
+And in this section, we're going to mainly focus in on cleaning up our code a little bit.
+
+3
+00:00:10,140 --> 00:00:16,379
+And what I'm going to do is I'm going to begin with looking into all of the different view files that
+
+4
+00:00:16,379 --> 00:00:18,480
+pertain to our pages.
+
+5
+00:00:18,480 --> 00:00:20,640
+So let's go into our pages directory.
+
+6
+00:00:20,640 --> 00:00:24,720
+And what I did is I opened up the indexed view, which is the home page.
+
+7
+00:00:24,720 --> 00:00:29,790
+I then opened up the car view, which is going to be the car listing page.
+
+8
+00:00:29,790 --> 00:00:36,240
+And then I opened up this page over here, the name Dash ID dot view, which is actually the car itself.
+
+9
+00:00:36,240 --> 00:00:39,720
+And I want to kind of just explore the code at this point.
+
+10
+00:00:39,720 --> 00:00:46,800
+So let's begin with the indexed view, and I want to focus in on the HTML, not the script tag.
+
+11
+00:00:47,670 --> 00:00:48,600
+So let's go over here.
+
+12
+00:00:48,600 --> 00:00:54,210
+So we have the template, we have the div, and over here we have our nav bar component and then we
+
+13
+00:00:54,210 --> 00:00:56,120
+have our car hero.
+
+14
+00:00:56,130 --> 00:01:00,600
+So let's actually look at a common pattern when we go to the car out view.
+
+15
+00:01:00,600 --> 00:01:08,040
+So we have our template, we have our div and then we have our nav bar at the very top and then we have
+
+16
+00:01:08,040 --> 00:01:13,080
+our div that's going to contain all of the HTML that pertains to this page.
+
+17
+00:01:13,620 --> 00:01:17,580
+Now if I go back over here, you can see the exact same thing.
+
+18
+00:01:18,030 --> 00:01:24,720
+We have our nav bar and then we have a div that contains all of the different components that live inside
+
+19
+00:01:24,720 --> 00:01:25,800
+of this page.
+
+20
+00:01:26,280 --> 00:01:28,260
+So what are we noticing here?
+
+21
+00:01:28,260 --> 00:01:30,600
+We're noticing kind of a common pattern.
+
+22
+00:01:30,600 --> 00:01:40,560
+So throughout these three pages we always render the nav bar component and importantly, very importantly,
+
+23
+00:01:40,560 --> 00:01:45,360
+we always render it in the exact same position.
+
+24
+00:01:45,360 --> 00:01:48,150
+So it's always at the very top.
+
+25
+00:01:48,150 --> 00:01:53,220
+So you can see here the nav bar component is at the very top, the nav bar component is at the very
+
+26
+00:01:53,220 --> 00:01:56,520
+top and the nav bar is component that is at the very top.
+
+27
+00:01:56,520 --> 00:02:04,140
+And most likely if we add more and more pages, we're going to want to have that nav bar component be
+
+28
+00:02:04,140 --> 00:02:05,160
+at the very top.
+
+29
+00:02:05,160 --> 00:02:08,310
+And of course we are going to want to render it.
+
+30
+00:02:08,310 --> 00:02:16,020
+So why wouldn't it be nice if we can somehow abstract this away, if somehow we don't have to actually
+
+31
+00:02:16,020 --> 00:02:23,880
+render the nav bar for every single page we can just have nux figure out that I want to have a nav bar
+
+32
+00:02:23,880 --> 00:02:29,550
+for every single page and I want it to be located at the very top of the page.
+
+33
+00:02:29,550 --> 00:02:32,370
+So how can we do that?
+
+34
+00:02:32,370 --> 00:02:37,470
+Well, we can actually do that with something known as layouts.
+
+35
+00:02:37,470 --> 00:02:45,870
+So layouts allow us to lay out our page and we can also have a default layout.
+
+36
+00:02:45,870 --> 00:02:51,870
+And I think it will make a lot more sense once we actually go ahead and code out our very first layout.
+
+37
+00:02:52,110 --> 00:02:57,120
+So layouts only work inside of a layout directory.
+
+38
+00:02:57,120 --> 00:03:01,920
+So let's go ahead and create directory and it has to be called layouts.
+
+39
+00:03:01,920 --> 00:03:07,230
+And as you can imagine, it's going to be very similar reason as to why this has to be called component
+
+40
+00:03:07,230 --> 00:03:09,150
+and why this has to be called pages.
+
+41
+00:03:09,150 --> 00:03:15,060
+Knox is going to understand that the view files inside of this layouts directory are layouts, and it's
+
+42
+00:03:15,060 --> 00:03:17,250
+going to do some magic behind the scenes.
+
+43
+00:03:17,250 --> 00:03:21,900
+So let's go ahead over here and we're going to do layouts and we're going to create a new file.
+
+44
+00:03:21,900 --> 00:03:24,870
+Now, typically, we don't really care what we call the file.
+
+45
+00:03:24,900 --> 00:03:27,870
+I guess in the pages we do care depending on the path.
+
+46
+00:03:27,870 --> 00:03:30,000
+But over here, this actually matters a lot.
+
+47
+00:03:30,000 --> 00:03:37,440
+We have to call it default dot view to define a default layout that is going to exist for every single
+
+48
+00:03:37,440 --> 00:03:39,180
+page in our application.
+
+49
+00:03:39,390 --> 00:03:45,090
+So let's go ahead and create that page and this is just going to be a regular well view file.
+
+50
+00:03:45,090 --> 00:03:47,280
+So we're going to have a template, a div.
+
+51
+00:03:47,280 --> 00:03:53,910
+And then what I'm going to do is I'm going to define at the very top, I always want to render the nav
+
+52
+00:03:53,940 --> 00:03:54,540
+bar.
+
+53
+00:03:54,690 --> 00:03:59,780
+And then what I'm going to do is I'm going to define the slot component.
+
+54
+00:03:59,790 --> 00:04:02,880
+Now this isn't any nux specific component.
+
+55
+00:04:02,880 --> 00:04:06,390
+This is something that we already see in Vue three.
+
+56
+00:04:06,390 --> 00:04:13,380
+It is is in essence what this is, is all of the HTML that is going to be housed right over here inside
+
+57
+00:04:13,380 --> 00:04:15,120
+of these specific files.
+
+58
+00:04:15,120 --> 00:04:19,019
+So right now the slot component would be all of this HTML right over here.
+
+59
+00:04:19,019 --> 00:04:22,290
+Similarly, the slot component will be this over here.
+
+60
+00:04:22,290 --> 00:04:27,480
+So now what we're saying is, Hey, I want the nav bar and I want everything all the other HTML that's
+
+61
+00:04:27,480 --> 00:04:28,770
+rendered over here.
+
+62
+00:04:28,860 --> 00:04:30,870
+So let's go ahead and actually save those.
+
+63
+00:04:31,260 --> 00:04:36,210
+And in order to actually get this to work, we need to go over here to the app dot view and we need
+
+64
+00:04:36,210 --> 00:04:39,030
+to wrap this with a nux layout.
+
+65
+00:04:39,030 --> 00:04:43,410
+Just saying that hey, I want my nux page to use the Knox layout.
+
+66
+00:04:43,620 --> 00:04:44,730
+So let's go over here.
+
+67
+00:04:44,730 --> 00:04:47,850
+And right away we actually notice something interesting.
+
+68
+00:04:47,850 --> 00:04:52,590
+We have two nav bars and then we have our hero right over here.
+
+69
+00:04:52,590 --> 00:04:59,550
+And if I were to click on let's say Toronto now where to go search, you can see again two nav bars
+
+70
+00:04:59,550 --> 00:04:59,740
+and we.
+
+71
+00:04:59,830 --> 00:05:03,150
+Have our research and if I were to click on a specific car.
+
+72
+00:05:04,880 --> 00:05:05,150
+Oh, yeah.
+
+73
+00:05:05,150 --> 00:05:06,500
+We didn't make this clickable yet.
+
+74
+00:05:06,510 --> 00:05:07,460
+Yeah, that's later on.
+
+75
+00:05:07,460 --> 00:05:08,210
+Don't worry.
+
+76
+00:05:08,510 --> 00:05:10,250
+Uh, let's go over here.
+
+77
+00:05:10,250 --> 00:05:14,570
+We'll say car and we'll just go to Jeep one.
+
+78
+00:05:14,660 --> 00:05:20,810
+And over here you can see we have two nav bars, and this actually makes sense.
+
+79
+00:05:20,810 --> 00:05:24,740
+So what this is doing is it's taking this default layout.
+
+80
+00:05:24,740 --> 00:05:25,730
+And where is that?
+
+81
+00:05:25,730 --> 00:05:30,530
+It's taking this default layout and it's applying it to every single page.
+
+82
+00:05:30,530 --> 00:05:37,040
+So what it's doing is it's adding this nav bar and then it's adding all of the HTML that is within the
+
+83
+00:05:37,040 --> 00:05:40,730
+page, and that also includes an additional nav bar.
+
+84
+00:05:40,730 --> 00:05:45,950
+So the whole point of adding the layout is so we can remove the need of adding that additional nav bar.
+
+85
+00:05:45,950 --> 00:05:50,300
+So I'm going to go ahead and actually do that so we don't have those double nav bars.
+
+86
+00:05:50,300 --> 00:05:56,150
+So I'm going to go ahead and remove those double nav bars and let's go over here.
+
+87
+00:05:57,100 --> 00:05:59,690
+And we're going to go ahead and remove that.
+
+88
+00:05:59,710 --> 00:06:00,460
+And there we go.
+
+89
+00:06:00,460 --> 00:06:04,950
+So now you can see we have pretty much drastically cleaned up our code.
+
+90
+00:06:04,960 --> 00:06:07,660
+And you can imagine if our Linux application is getting huge.
+
+91
+00:06:07,660 --> 00:06:10,060
+Maybe we have 100 different pages now.
+
+92
+00:06:10,060 --> 00:06:15,190
+We don't have to add that nav bar component at the very top every single time.
+

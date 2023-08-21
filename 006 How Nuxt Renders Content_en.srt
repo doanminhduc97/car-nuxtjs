@@ -1,0 +1,684 @@
+1
+00:00:00,810 --> 00:00:08,310
+The error that we have just created is actually known as a server side error, and that might not make
+
+2
+00:00:08,310 --> 00:00:14,940
+all too much sense to you if you don't understand exactly how web content is rendered onto the browser.
+
+3
+00:00:14,970 --> 00:00:20,370
+So what we're going to do is a little quick aside break from the code, and we're going to go through
+
+4
+00:00:20,370 --> 00:00:26,700
+some really important concepts that you really, really have to understand and master if you want to
+
+5
+00:00:26,700 --> 00:00:28,530
+master Nux three.
+
+6
+00:00:28,830 --> 00:00:34,290
+So right now we have a browser that is exactly what we are looking at right now.
+
+7
+00:00:34,320 --> 00:00:38,940
+Now this could be either Google Chrome, Firefox Safari doesn't really matter.
+
+8
+00:00:38,940 --> 00:00:40,530
+It is a browser.
+
+9
+00:00:40,560 --> 00:00:45,600
+Now let's say that we go to a particular website airbnb.com.
+
+10
+00:00:45,600 --> 00:00:47,610
+Amazon.com doesn't really matter.
+
+11
+00:00:47,610 --> 00:00:49,680
+It could also be local host 3000.
+
+12
+00:00:49,680 --> 00:00:50,880
+That is a website.
+
+13
+00:00:50,880 --> 00:00:53,100
+So we go to that particular website.
+
+14
+00:00:53,100 --> 00:00:55,790
+What do we expect?
+
+15
+00:00:55,800 --> 00:01:01,260
+Well, we expect content, of course, so we expect content to be rendered onto the screen.
+
+16
+00:01:01,260 --> 00:01:04,940
+So we're expecting HTML, we're expecting CSS.
+
+17
+00:01:04,950 --> 00:01:09,270
+We're also expecting JavaScript to make the website nice and interactive.
+
+18
+00:01:09,600 --> 00:01:16,800
+Now, the million dollar question is how in the world does the HTML and the CSS and the JavaScript that
+
+19
+00:01:16,800 --> 00:01:24,330
+we need will get to the browser because at some point, at some point it's going to be completely empty.
+
+20
+00:01:24,330 --> 00:01:29,790
+But then we're going to make a request and then we're going to want to get that data, that HTML, CSS
+
+21
+00:01:29,790 --> 00:01:31,320
+files, etc..
+
+22
+00:01:31,320 --> 00:01:33,330
+So how do we do that?
+
+23
+00:01:33,390 --> 00:01:36,350
+Well, we do that with a server.
+
+24
+00:01:36,360 --> 00:01:41,940
+So with any website, it is always going to have a development server.
+
+25
+00:01:41,940 --> 00:01:48,480
+So if we go to Airbnb somewhere hosted in the cloud, probably in AWS, there is a web development server
+
+26
+00:01:48,480 --> 00:01:50,580
+and even our NUX applications.
+
+27
+00:01:50,580 --> 00:01:54,960
+Whenever we do NPM run dev, it spins up a development server.
+
+28
+00:01:54,970 --> 00:01:58,410
+I'm sorry, if you go to airbnb.com, it's not going to be a development server, it's going to be an
+
+29
+00:01:58,410 --> 00:02:02,100
+actual server web server that is hosted on us.
+
+30
+00:02:02,100 --> 00:02:04,880
+But nonetheless there is always a server.
+
+31
+00:02:04,890 --> 00:02:12,270
+Now the way that the browser and the server interact with one another is going to dictate which type
+
+32
+00:02:12,270 --> 00:02:16,790
+of rendering style that will we eventually choose.
+
+33
+00:02:16,800 --> 00:02:19,320
+So there's two different types of rendering styles.
+
+34
+00:02:19,320 --> 00:02:22,930
+There is server side rendering and then there's client side rendering.
+
+35
+00:02:22,950 --> 00:02:26,310
+So let's quickly discuss server side rendering.
+
+36
+00:02:26,730 --> 00:02:32,230
+So let's say that we go to localhost 3000, so we go to localhost 3000.
+
+37
+00:02:32,250 --> 00:02:38,460
+What ends up happening is the client makes a request to the browser, to the server right over here.
+
+38
+00:02:38,460 --> 00:02:45,420
+So the browser makes a request to the server and the server gives you everything that you need in order
+
+39
+00:02:45,420 --> 00:02:47,730
+to render that particular page.
+
+40
+00:02:47,730 --> 00:02:49,980
+Because right now we're on the slash page.
+
+41
+00:02:49,980 --> 00:02:56,190
+So it gives you the home page HTML, which has everything which has the hero content, also gives you
+
+42
+00:02:56,190 --> 00:03:00,360
+the CSS and it also gives you the JavaScript.
+
+43
+00:03:00,360 --> 00:03:05,250
+So just goes ahead and pretty much just gives you everything right off the bat and the browser just
+
+44
+00:03:05,250 --> 00:03:06,930
+grabs it and renders it.
+
+45
+00:03:07,200 --> 00:03:10,710
+Now why is this server side rendering?
+
+46
+00:03:10,710 --> 00:03:14,340
+Well, because really the server is doing all of the work.
+
+47
+00:03:14,340 --> 00:03:15,540
+It is just creating.
+
+48
+00:03:15,540 --> 00:03:21,210
+The HTML file is creating the CSS file, it's creating the JavaScript file, and it's just giving it
+
+49
+00:03:21,210 --> 00:03:27,180
+to the client, the browser, and the client is just, well, taking it and just rendering it.
+
+50
+00:03:27,180 --> 00:03:30,880
+That's why this is server side rendering.
+
+51
+00:03:30,900 --> 00:03:34,410
+Now let's say that we decide to go to a different page.
+
+52
+00:03:34,410 --> 00:03:40,110
+Well, if we go to a different page, then the client is going to go ahead and make another request
+
+53
+00:03:40,110 --> 00:03:41,430
+to the web server.
+
+54
+00:03:41,430 --> 00:03:45,930
+And the web server is going to pretty much do the exact same thing, but for this page instead.
+
+55
+00:03:45,930 --> 00:03:50,970
+So now it's going to give us the cars, start HTML, the cars, CSS, the cars, start JavaScript,
+
+56
+00:03:50,970 --> 00:03:54,140
+and now we have all of the content that we need.
+
+57
+00:03:54,150 --> 00:03:55,770
+So I hope that makes sense.
+
+58
+00:03:55,770 --> 00:03:59,340
+So for each particular page, we're making a request, we're getting data back.
+
+59
+00:03:59,790 --> 00:04:05,250
+So now let's talk about client side rendering, and this one might be a little bit more confusing,
+
+60
+00:04:05,250 --> 00:04:09,180
+but hopefully I can explain it in a way where it's not as confusing.
+
+61
+00:04:09,450 --> 00:04:15,480
+So let's say I go to local host 3000, so I go to this particular website.
+
+62
+00:04:15,510 --> 00:04:21,360
+The client, like with server side rendering, is going to make a request to the web server, but the
+
+63
+00:04:21,360 --> 00:04:27,120
+web server, instead of actually giving you the HTML for that particular page as well as the CSS as
+
+64
+00:04:27,120 --> 00:04:33,570
+well as the JavaScript initially, it just gives you an empty HTML file and it's not really empty.
+
+65
+00:04:33,570 --> 00:04:38,880
+There's just like the basic body as well as the head, but there's really nothing in there.
+
+66
+00:04:38,880 --> 00:04:42,480
+It's just kind of completely empty and add to the browser.
+
+67
+00:04:42,480 --> 00:04:45,840
+It's just going to be completely empty because there's really nothing in the body.
+
+68
+00:04:45,840 --> 00:04:51,780
+So it gives you this empty HTML file and you might be thinking, why in the world would it do this?
+
+69
+00:04:51,780 --> 00:04:54,000
+This doesn't really make all too much sense.
+
+70
+00:04:54,210 --> 00:05:00,240
+Well, right afterwards, right after it sends you the HTML file, it sends you a JavaScript.
+
+71
+00:05:00,590 --> 00:05:03,440
+Bundle for the whole application.
+
+72
+00:05:03,800 --> 00:05:08,830
+It doesn't matter what page it is, it just gives you the JavaScript bundle for all of the application.
+
+73
+00:05:08,840 --> 00:05:15,320
+The client gets it, and then the client starts to parse that JavaScript bundle.
+
+74
+00:05:15,320 --> 00:05:21,050
+And that JavaScript bundle contains all of the information about the HTML, the CSS, and all of the
+
+75
+00:05:21,050 --> 00:05:24,410
+logic that needs to be rendered for a particular page.
+
+76
+00:05:24,410 --> 00:05:26,900
+So the client is going to start parsing it.
+
+77
+00:05:26,900 --> 00:05:32,950
+And then once it starts parsing it, it's going to start rendering and creating HTML elements.
+
+78
+00:05:32,960 --> 00:05:36,560
+So eventually at the end of the day, we achieve the exact same thing.
+
+79
+00:05:36,560 --> 00:05:39,150
+But how we got there is a little bit different.
+
+80
+00:05:39,170 --> 00:05:41,010
+Now, why is this called client side rendering?
+
+81
+00:05:41,030 --> 00:05:44,870
+Well, as you can imagine, the client is the one that's going to be doing all the hard work.
+
+82
+00:05:44,870 --> 00:05:51,230
+It's parsing the JavaScript and it's going ahead and it's rendering all of the HTML elements.
+
+83
+00:05:51,260 --> 00:05:56,270
+Now, one thing that is really nice about client side rendering is now that we have this JavaScript
+
+84
+00:05:56,270 --> 00:06:01,960
+bundle, if we go to a different page, we don't have to make another request to the server.
+
+85
+00:06:01,970 --> 00:06:05,360
+We already have all of the logic inside of the client.
+
+86
+00:06:05,370 --> 00:06:10,820
+So what we can do is, well, the client is going to go ahead and parse that JavaScript and it's just
+
+87
+00:06:10,820 --> 00:06:12,740
+going to kind of re render components.
+
+88
+00:06:12,740 --> 00:06:15,560
+It's going to remove a component and then add another component.
+
+89
+00:06:15,560 --> 00:06:19,160
+And so it's going to kind of give the illusion of a multi page application.
+
+90
+00:06:19,160 --> 00:06:25,870
+But in reality it's really just one HTML file that is just changing its HTML consistently.
+
+91
+00:06:25,880 --> 00:06:30,290
+But again, the nice part is, is we don't have to make a request back to the server and get the data
+
+92
+00:06:30,290 --> 00:06:30,920
+back.
+
+93
+00:06:31,370 --> 00:06:33,280
+So let's do a quick little refresher.
+
+94
+00:06:33,290 --> 00:06:39,150
+So server side rendering is when of course we make the request and we get everything right back.
+
+95
+00:06:39,170 --> 00:06:43,630
+Now, of course there's pros and cons to each approach, so let's talk about some of the pros.
+
+96
+00:06:43,640 --> 00:06:50,330
+So one of the biggest pro is that it renders all of the HTML elements right away, which is awesome
+
+97
+00:06:50,330 --> 00:06:51,290
+for SEO.
+
+98
+00:06:51,320 --> 00:06:56,810
+Obviously, if we want to have search engine optimization, we want to make sure that our application
+
+99
+00:06:56,810 --> 00:06:59,660
+is at the very top of search engines.
+
+100
+00:06:59,660 --> 00:07:04,040
+We want to have as much keywords as possible, as much HTML elements as possible.
+
+101
+00:07:04,040 --> 00:07:11,090
+And so this is great for SEO and it's also has a faster initial render because it doesn't have to wait
+
+102
+00:07:11,090 --> 00:07:13,490
+for to parse all of this JavaScript.
+
+103
+00:07:13,490 --> 00:07:15,500
+It kind of just gets it right away.
+
+104
+00:07:15,830 --> 00:07:18,110
+Now, of course, it also has quite a bit of cons.
+
+105
+00:07:18,110 --> 00:07:25,730
+So one major, major, major con is that, well, you know, we are making multiple requests to the
+
+106
+00:07:25,730 --> 00:07:26,150
+server.
+
+107
+00:07:26,150 --> 00:07:28,520
+We're consistently making these requests to the server.
+
+108
+00:07:28,520 --> 00:07:34,190
+So if you go to another page, we make another request, we go to another page, we make another request
+
+109
+00:07:34,190 --> 00:07:39,530
+which actually causes, you know, slower navigation across pages.
+
+110
+00:07:39,920 --> 00:07:44,990
+So even though the initial render is fast and it's going to be faster than client side rendering is
+
+111
+00:07:44,990 --> 00:07:51,110
+going to be slower to navigate across pages because we have to make a request and get the response back.
+
+112
+00:07:51,110 --> 00:07:55,640
+And of course, well, making requests continuously is expensive.
+
+113
+00:07:56,000 --> 00:08:00,650
+You know, making requests is not going to be free whenever we're hosting a larger application.
+
+114
+00:08:00,800 --> 00:08:03,050
+So now let's talk about client side rendering.
+
+115
+00:08:03,050 --> 00:08:08,510
+So client side rendering, one huge benefit is it really only hits the server just once so we don't
+
+116
+00:08:08,510 --> 00:08:10,700
+have to hit it multiple different times.
+
+117
+00:08:10,700 --> 00:08:13,160
+And so it's not expensive at all.
+
+118
+00:08:13,160 --> 00:08:15,260
+We just get everything all at once.
+
+119
+00:08:15,260 --> 00:08:18,830
+And also it causes smoother and faster navigation.
+
+120
+00:08:18,830 --> 00:08:25,100
+So because we're not hitting the server when we navigate and we're just, you know, just removing components
+
+121
+00:08:25,100 --> 00:08:29,700
+and re rendering different HTML elements, it's a lot smoother and faster.
+
+122
+00:08:29,720 --> 00:08:37,700
+However, of course, it has a slower initial render, which is true because, well, it is.
+
+123
+00:08:37,740 --> 00:08:40,309
+We have to parse that JavaScript.
+
+124
+00:08:40,309 --> 00:08:46,520
+And also it's terrible for SEO because we'll remember we're only getting that empty HTML file and we're
+
+125
+00:08:46,520 --> 00:08:49,100
+going to actually render that HTML file.
+
+126
+00:08:49,100 --> 00:08:53,030
+And then the SEO, the search engines are going to go ahead and take a look at that and be like, Oh,
+
+127
+00:08:53,030 --> 00:08:57,620
+okay, well, there's nothing there, so I'm not going to promote this because there's really no content
+
+128
+00:08:57,620 --> 00:08:58,160
+there.
+
+129
+00:08:58,160 --> 00:09:00,860
+So it's not really all to great for SEO.
+
+130
+00:09:01,430 --> 00:09:06,260
+So now that we have an understanding of server side rendering and client side rendering, that begs
+
+131
+00:09:06,260 --> 00:09:09,920
+the question what is Nux, What does Nux use?
+
+132
+00:09:09,920 --> 00:09:12,920
+Does it use server side or does it use client side?
+
+133
+00:09:13,160 --> 00:09:16,580
+Well, the answer is neither, but both.
+
+134
+00:09:16,580 --> 00:09:18,590
+So let me explain.
+
+135
+00:09:18,590 --> 00:09:26,960
+So it actually kind of uses something known as universal rendering and it is kind of a combination of
+
+136
+00:09:26,960 --> 00:09:34,760
+both client side as well as server side rendering and it kind of takes the best of both worlds and it
+
+137
+00:09:34,760 --> 00:09:36,620
+kind of omits the cons.
+
+138
+00:09:36,620 --> 00:09:40,390
+So let me kind of explain exactly how universal rendering works.
+
+139
+00:09:40,400 --> 00:09:46,850
+So let's say over here we have our our browser and we go to local host 3000.
+
+140
+00:09:46,850 --> 00:09:49,460
+So exactly like server side rendering.
+
+141
+00:09:49,460 --> 00:09:53,930
+We're going to go ahead and make a request to our server and our server is going to return everything
+
+142
+00:09:53,930 --> 00:09:54,710
+right back.
+
+143
+00:09:54,710 --> 00:10:00,170
+So this is going to be obviously awesome for the initial load and it's also going to be terrific for.
+
+144
+00:10:00,270 --> 00:10:03,390
+CEO, but it doesn't stop there.
+
+145
+00:10:03,390 --> 00:10:08,370
+So as soon as let's say we're playing around with the page, the server is going to go ahead and kind
+
+146
+00:10:08,370 --> 00:10:13,830
+of in the background, it's going to send us the JavaScript bundle and the JavaScript bundle is going
+
+147
+00:10:13,830 --> 00:10:14,460
+to go ahead.
+
+148
+00:10:14,460 --> 00:10:17,480
+And this is a very common term in Nux.
+
+149
+00:10:17,490 --> 00:10:20,400
+It's going to hydrate our application.
+
+150
+00:10:20,400 --> 00:10:23,100
+So it's just going to kind of make everything functional.
+
+151
+00:10:23,100 --> 00:10:28,950
+And then let's say I want to move to a different page, so I want to move to a different page because
+
+152
+00:10:28,950 --> 00:10:32,460
+now we have that JavaScript bundle and we're hydrated.
+
+153
+00:10:32,460 --> 00:10:37,800
+We don't have to make that request again, so we don't have to make that request to the server.
+
+154
+00:10:37,800 --> 00:10:43,440
+Again, we're just going to move around with the HTML, just like we have our client side rendering.
+
+155
+00:10:43,440 --> 00:10:49,440
+So you can see now we have the effects of both server side rendering and client side rendering.
+
+156
+00:10:49,440 --> 00:10:52,800
+We have the pros of them without the cons.
+
+157
+00:10:52,800 --> 00:10:58,350
+So this is kind of a really important concept to understand, is that, you know, in some cases we
+
+158
+00:10:58,350 --> 00:11:04,630
+are going to be server side rendering and in other cases we're going to be client side rendering.
+
+159
+00:11:04,650 --> 00:11:08,610
+Now, why is this right over here a server side error?
+
+160
+00:11:08,610 --> 00:11:11,430
+Well, let's go back to our page over here.
+
+161
+00:11:12,120 --> 00:11:18,540
+And this this really only occurs when we go directly to a particular path.
+
+162
+00:11:18,540 --> 00:11:20,760
+So let's go over here to slash.
+
+163
+00:11:21,180 --> 00:11:27,300
+We're going to slash core and we write in an ID that just doesn't exist.
+
+164
+00:11:27,300 --> 00:11:31,500
+And so we just say enter, and this is going to be the initial load.
+
+165
+00:11:31,500 --> 00:11:34,740
+And so this is going to be a server side error.
+
+166
+00:11:34,740 --> 00:11:41,580
+So we we requested to go directly to this page and of course this is going to be the initial load kind
+
+167
+00:11:41,580 --> 00:11:43,200
+of like this over here.
+
+168
+00:11:43,200 --> 00:11:49,230
+And we're going to get our HTML, CSS, our JavaScript, and of course over here this is going to cause
+
+169
+00:11:49,230 --> 00:11:51,700
+this server side error.
+
+170
+00:11:51,720 --> 00:11:56,280
+Now there's obviously different types of errors, like client side errors, which we're going to see
+
+171
+00:11:56,280 --> 00:11:57,630
+in the next section.
+

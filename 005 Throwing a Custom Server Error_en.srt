@@ -1,0 +1,196 @@
+1
+00:00:00,450 --> 00:00:06,939
+Now that we have made this nice and dynamic, we could potentially run into an error.
+
+2
+00:00:06,960 --> 00:00:15,090
+So let's say that a user decides to search for a car that has an ID that doesn't really exist in our
+
+3
+00:00:15,090 --> 00:00:16,020
+JSON file.
+
+4
+00:00:16,020 --> 00:00:20,610
+So I'm just going to put seven, seven, seven, seven, I'm going to press enter and you can see right
+
+5
+00:00:20,610 --> 00:00:23,100
+away we kind of get this blank screen.
+
+6
+00:00:23,100 --> 00:00:26,580
+And that's really because right over where is it?
+
+7
+00:00:26,580 --> 00:00:27,660
+Right over.
+
+8
+00:00:27,840 --> 00:00:28,830
+Where are we here?
+
+9
+00:00:29,130 --> 00:00:29,970
+Kind of forgot.
+
+10
+00:00:30,090 --> 00:00:32,450
+Right in the cards.
+
+11
+00:00:32,460 --> 00:00:38,340
+So in the cards right over here, we actually have a VRF and actually it's right over here.
+
+12
+00:00:38,340 --> 00:00:39,260
+So we have this VRF.
+
+13
+00:00:39,270 --> 00:00:44,780
+Now, if we didn't have this VRF, we're probably going to even run into a boatload of other issues.
+
+14
+00:00:44,780 --> 00:00:50,070
+So if I were to refresh, you can see here now we're getting a 500 error and it's actually going back
+
+15
+00:00:50,070 --> 00:00:53,460
+to that really nice error dot view file.
+
+16
+00:00:53,520 --> 00:00:57,960
+And you can see here that hey I cannot read property undefined of URL.
+
+17
+00:00:57,990 --> 00:01:03,390
+Now of course if I go back to a actual page you can see that everything is completely fine.
+
+18
+00:01:03,750 --> 00:01:12,960
+So what I want to do is when a user actually goes to an ID that is not of a car that exists in our JSON
+
+19
+00:01:12,960 --> 00:01:18,690
+file, I want to throw a custom error so we don't have that 500 error.
+
+20
+00:01:18,780 --> 00:01:25,110
+So right over here, what I'm going to do is I'm going to say if car value doesn't exist.
+
+21
+00:01:25,110 --> 00:01:29,190
+So if we can't find that particular car, the car is going to be null.
+
+22
+00:01:29,190 --> 00:01:34,230
+So I'm just going to say if it doesn't exist, what I'm going to do is I'm going to throw and then I'm
+
+23
+00:01:34,230 --> 00:01:37,050
+going to say throw, create error.
+
+24
+00:01:37,050 --> 00:01:40,070
+And this just allows us to create a nux error.
+
+25
+00:01:40,080 --> 00:01:46,950
+So I'm going to say over here, status code, I'm going to say 400 oh four and then for the message
+
+26
+00:01:47,670 --> 00:01:56,010
+I'm going to say, well, let's make this a nice dynamic message and I'm going to say car with ID,
+
+27
+00:01:56,250 --> 00:02:09,720
+I'll just say ID off and over here we'll just do rho dot params dot id and we'll say does not exist.
+
+28
+00:02:09,960 --> 00:02:14,640
+And so this is actually how we can go ahead and throw custom errors.
+
+29
+00:02:14,640 --> 00:02:21,840
+And so now any time I go to a page like this, you can see now I get a 404 and this time it's not a
+
+30
+00:02:21,840 --> 00:02:28,230
+404 page not found because this is actually a page that exists within our directory.
+
+31
+00:02:28,230 --> 00:02:30,600
+So this is an actual valid page.
+
+32
+00:02:30,600 --> 00:02:33,420
+However, we just can't find a car.
+
+33
+00:02:33,420 --> 00:02:39,720
+So it's still if 404 something was not found and now you can see the error message is a little bit different.
+
+34
+00:02:39,720 --> 00:02:43,740
+And let me just go ahead and actually capitalize this because it looks a little bit nicer so you can
+
+35
+00:02:43,740 --> 00:02:45,780
+see the powers of this.
+
+36
+00:02:45,780 --> 00:02:50,640
+So now what I can do is I can actually go ahead and go back and do whatever it is that I want.
+
+37
+00:02:50,670 --> 00:02:59,310
+However, once I create an error, that error is actually going to persist throughout the application.
+
+38
+00:02:59,310 --> 00:03:06,090
+So ideally, inside of the error view file, we actually clear that error.
+
+39
+00:03:06,090 --> 00:03:14,820
+And so we can actually do that by well, going over here and I can just say very simply, clear error.
+
+40
+00:03:14,820 --> 00:03:21,810
+So I can clear this error and also I can pass in an option, a redirect option to redirect me back to
+
+41
+00:03:21,810 --> 00:03:23,070
+the slash home page.
+
+42
+00:03:23,070 --> 00:03:24,450
+So that's going to clear that error.
+
+43
+00:03:24,450 --> 00:03:26,370
+So we don't have that error anymore.
+
+44
+00:03:26,370 --> 00:03:27,930
+So now let's go back over here.
+
+45
+00:03:27,930 --> 00:03:31,650
+I'll just search for auto and over here.
+
+46
+00:03:31,650 --> 00:03:36,360
+I'm just going to go and search for this portion and then I'm going to change this up to like five,
+
+47
+00:03:36,360 --> 00:03:37,290
+five, five.
+
+48
+00:03:37,320 --> 00:03:42,060
+You can see a car with this ID and we can actually go back and it clears the error itself.
+
+49
+00:03:42,060 --> 00:03:46,200
+So this is how we can throw custom errors within nux.
+

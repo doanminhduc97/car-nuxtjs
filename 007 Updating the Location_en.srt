@@ -1,0 +1,416 @@
+1
+00:00:00,090 --> 00:00:05,670
+So now that we understand the difference between server side as well as client side rendering, let's
+
+2
+00:00:05,670 --> 00:00:12,750
+take a look at a potential client side error that we might potentially face whenever we're dealing with
+
+3
+00:00:12,750 --> 00:00:13,710
+NOx three.
+
+4
+00:00:13,800 --> 00:00:19,050
+Now, in order to actually see this error, I actually want to make this sidebar functional.
+
+5
+00:00:19,050 --> 00:00:25,020
+And specifically, let's just focus in on the location right over here.
+
+6
+00:00:25,170 --> 00:00:31,440
+So let's go to our sidebar component and you can see in the sidebar component that we have this div
+
+7
+00:00:31,440 --> 00:00:34,590
+element that contains other HTML elements.
+
+8
+00:00:34,590 --> 00:00:42,390
+And this array over here is kind of just our modal that is going to appear whenever we click on the
+
+9
+00:00:42,390 --> 00:00:43,980
+actual city that we're currently in.
+
+10
+00:00:43,980 --> 00:00:46,110
+And I'm going to zoom in here just for you guys.
+
+11
+00:00:46,230 --> 00:00:48,240
+So let's just make this a little bit functional.
+
+12
+00:00:48,240 --> 00:00:52,060
+This is going to be just a little bit of JS over here.
+
+13
+00:00:52,080 --> 00:00:54,780
+So we're going to go here just or maybe not.
+
+14
+00:00:54,790 --> 00:00:58,030
+JS Well, JavaScript and just regular view.
+
+15
+00:00:58,050 --> 00:01:05,010
+And what I'm going to do is I'm going to create a piece of state, I'm going to call this const Modal,
+
+16
+00:01:05,010 --> 00:01:11,310
+and I'm going to say Ref, and I'm going to make this an object and I'm going to say, make an initially
+
+17
+00:01:11,310 --> 00:01:15,480
+false and over here, location false.
+
+18
+00:01:15,750 --> 00:01:19,140
+And then over here we're going to say price false.
+
+19
+00:01:19,140 --> 00:01:23,430
+So just a quick reminder, We have three different categories.
+
+20
+00:01:23,430 --> 00:01:28,830
+And for now, I'm going to make everything false, which means that everything all the models are not
+
+21
+00:01:28,830 --> 00:01:29,850
+going to be rendered.
+
+22
+00:01:29,850 --> 00:01:35,940
+And now if you do want to render, say, the location modal, then this is going to all change to true.
+
+23
+00:01:36,540 --> 00:01:43,260
+So let's go over here and let's only render this false out of V if we'll just say V, if we're only
+
+24
+00:01:43,260 --> 00:01:52,110
+going to render this if well, modal dot and we'll say dot in this case location.
+
+25
+00:01:52,110 --> 00:01:54,330
+So we only want to render that if this is true.
+
+26
+00:01:54,330 --> 00:01:56,180
+And in this case, obviously it's not true.
+
+27
+00:01:56,190 --> 00:01:58,130
+Well, when do we want to make it true?
+
+28
+00:01:58,140 --> 00:02:00,840
+Well, of course we want to make it true.
+
+29
+00:02:00,870 --> 00:02:07,380
+Whenever we well, click on, we're going to say this right over here.
+
+30
+00:02:07,380 --> 00:02:12,990
+So whenever we click on this H three, we want to go ahead and actually make that true.
+
+31
+00:02:13,440 --> 00:02:14,430
+So let's go.
+
+32
+00:02:14,430 --> 00:02:17,760
+And I'm going to say adds Click.
+
+33
+00:02:18,930 --> 00:02:21,510
+And I'm going to create a function here.
+
+34
+00:02:21,510 --> 00:02:26,330
+I'm going to say update modal, update to modal.
+
+35
+00:02:26,340 --> 00:02:32,370
+I'm going to pass in a key called location just so we can kind of reuse this function throughout our
+
+36
+00:02:32,370 --> 00:02:33,050
+app.
+
+37
+00:02:33,060 --> 00:02:40,080
+So I'm going to go over here and I'm going to go here and I'm just going to say const and I'll say update
+
+38
+00:02:40,080 --> 00:02:44,880
+modal, and that's going to be a function that's going to take in key, which is just going to be what
+
+39
+00:02:44,910 --> 00:02:46,800
+either make location or price.
+
+40
+00:02:46,920 --> 00:02:54,030
+And very simply, all we're going to do here is we're going to say modal dot value of that particular
+
+41
+00:02:54,030 --> 00:02:54,780
+key.
+
+42
+00:02:54,780 --> 00:02:58,200
+I want to change it to what it's not currently.
+
+43
+00:02:58,200 --> 00:03:04,820
+So in essence, I'm just going to say bank and then a modal dot value, dot key.
+
+44
+00:03:04,830 --> 00:03:05,910
+So very simple stuff.
+
+45
+00:03:05,910 --> 00:03:07,620
+So now if I were to click on this.
+
+46
+00:03:08,550 --> 00:03:11,400
+You can see we get the moral or we don't get the moral.
+
+47
+00:03:11,660 --> 00:03:13,880
+Okay, so that's just very simple.
+
+48
+00:03:13,890 --> 00:03:17,760
+But now I want the ability to actually change the city.
+
+49
+00:03:17,760 --> 00:03:21,150
+So let's say I go ahead and change it to Ottawa.
+
+50
+00:03:21,180 --> 00:03:26,790
+I want to be able to click apply, and then I want it to actually change the route.
+
+51
+00:03:26,790 --> 00:03:31,480
+So instead of being slash car, it's going to be slash car slash Ottawa.
+
+52
+00:03:31,500 --> 00:03:33,880
+So let's go ahead and actually do that.
+
+53
+00:03:33,990 --> 00:03:37,420
+Sorry, It's going to be slash city slash Ottawa slash car.
+
+54
+00:03:37,440 --> 00:03:40,950
+So I'm going to go over here and I'm going to create a new function.
+
+55
+00:03:41,670 --> 00:03:49,920
+I'm going to say on change location and I'm going to go over here and it's going to be a very simple
+
+56
+00:03:49,920 --> 00:03:50,620
+function.
+
+57
+00:03:50,640 --> 00:03:57,570
+I'm going to go ahead and actually close the modal again so I can just call update modal for location,
+
+58
+00:03:57,570 --> 00:03:59,790
+because that's going to go ahead and close it for me.
+
+59
+00:03:59,910 --> 00:04:06,330
+And then what I'm going to do is I'm going to say navigate to a very specifically, I just want to navigate
+
+60
+00:04:06,330 --> 00:04:11,990
+to slash city and then I'm going to say slash and then dollar sign.
+
+61
+00:04:12,000 --> 00:04:15,660
+And of course, what we're going to need to do is actually store the input itself.
+
+62
+00:04:15,660 --> 00:04:22,230
+So let's just say Con city is equal to ref and let's have a V model over here in this input.
+
+63
+00:04:23,050 --> 00:04:29,800
+So we'll say the model now we'll say City Dot or just say the model city like so.
+
+64
+00:04:30,130 --> 00:04:38,170
+And then over here we can just say city dot value and then we'll say slash car.
+
+65
+00:04:38,620 --> 00:04:40,860
+And then we might also have a make.
+
+66
+00:04:40,870 --> 00:04:47,060
+So we need to make sure that we add that to make so we can just say route dot params dot make.
+
+67
+00:04:47,080 --> 00:04:49,570
+Now if there isn't a make, then it's just going to be completely empty.
+
+68
+00:04:49,570 --> 00:04:51,430
+So it's going to be what it was before.
+
+69
+00:04:51,520 --> 00:04:54,790
+Now of course, in order to actually utilize route, we have to define it.
+
+70
+00:04:54,790 --> 00:05:01,180
+So we're going to say cost route is equal to use route and we're going to go ahead and invoke that.
+
+71
+00:05:01,720 --> 00:05:03,040
+So this is looking pretty good.
+
+72
+00:05:03,040 --> 00:05:14,500
+One little modification I would like to do is I want to say if city dot value, if that is not defined.
+
+73
+00:05:14,500 --> 00:05:16,630
+So it's just completely empty.
+
+74
+00:05:16,900 --> 00:05:18,100
+I don't want to navigate.
+
+75
+00:05:18,100 --> 00:05:19,870
+I just want to return.
+
+76
+00:05:19,870 --> 00:05:22,810
+And I also don't even want to close the modal.
+
+77
+00:05:22,810 --> 00:05:24,160
+I just want to return early.
+
+78
+00:05:24,820 --> 00:05:25,250
+Okay.
+
+79
+00:05:25,300 --> 00:05:27,850
+So that should pretty much be it.
+
+80
+00:05:27,850 --> 00:05:32,470
+And actually one other thing is, at the very bottom, we're going to go ahead and actually empty this
+
+81
+00:05:32,470 --> 00:05:32,860
+out.
+
+82
+00:05:32,890 --> 00:05:34,510
+So that should work theoretically.
+
+83
+00:05:34,510 --> 00:05:37,870
+So if I were to go ahead and change this to, let's say, Ottawa.
+
+84
+00:05:39,270 --> 00:05:40,580
+And apply.
+
+85
+00:05:40,590 --> 00:05:42,420
+Let me do just a little refresh here.
+
+86
+00:05:42,420 --> 00:05:46,350
+I'm going to go to of course, it's not going to work because we're not using this function.
+
+87
+00:05:46,500 --> 00:05:48,720
+So let's use this function and the apply button.
+
+88
+00:05:48,720 --> 00:05:50,940
+So I'm going to say at click.
+
+89
+00:05:51,890 --> 00:05:54,280
+And then over here we're going to call that function.
+
+90
+00:05:54,290 --> 00:05:57,390
+So now let's just say Ottawa, I'm going to go ahead and apply.
+
+91
+00:05:57,430 --> 00:06:01,160
+Now you can see it says City Ottawa slash car, which is good.
+
+92
+00:06:01,190 --> 00:06:06,140
+Now, another thing that's not all too great is this right over here?
+
+93
+00:06:06,140 --> 00:06:10,250
+You can see that this is hard coded as Toronto.
+
+94
+00:06:10,820 --> 00:06:14,920
+So I want to of course, we'll make it not hard coded.
+
+95
+00:06:14,930 --> 00:06:25,730
+So let's go over here and I'm going to change this to be the route dot params and then dot city so it
+
+96
+00:06:25,730 --> 00:06:29,020
+can actually be the actual city itself.
+
+97
+00:06:29,030 --> 00:06:35,690
+So over here now I can see it's Ottawa and if I were to change this to Houston, I can see that it is
+
+98
+00:06:35,690 --> 00:06:36,430
+now Houston.
+
+99
+00:06:36,440 --> 00:06:38,270
+Okay, so that's looking good.
+
+100
+00:06:38,540 --> 00:06:42,710
+Now let's say, let's say a user is not good.
+
+101
+00:06:42,710 --> 00:06:49,550
+You know, user is not being a really good user and he's just putting some gibberish and specifically
+
+102
+00:06:49,550 --> 00:06:51,530
+they're putting in a number.
+
+103
+00:06:51,740 --> 00:06:59,690
+Then what I want to do in this case is I want to throw an error saying that this is not a valid city.
+
+104
+00:06:59,690 --> 00:07:03,590
+So let's actually go ahead and do that in the next section.
+

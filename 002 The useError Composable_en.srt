@@ -1,0 +1,100 @@
+1
+00:00:00,480 --> 00:00:03,070
+So we created this file.
+
+2
+00:00:03,090 --> 00:00:06,960
+However, we have a pretty major problem.
+
+3
+00:00:06,960 --> 00:00:12,600
+And the last section I told you that this is going to be an error file that all different errors are
+
+4
+00:00:12,600 --> 00:00:14,340
+eventually going to render.
+
+5
+00:00:14,340 --> 00:00:17,550
+So it's always going to render this template right over here.
+
+6
+00:00:17,730 --> 00:00:21,900
+So it's not necessarily always going to be a 404 error.
+
+7
+00:00:21,900 --> 00:00:28,200
+You could just have a 400 error or a 403 error or some other error that we can potentially have.
+
+8
+00:00:28,200 --> 00:00:33,060
+And it's also not necessarily always going to be a page not found error.
+
+9
+00:00:33,120 --> 00:00:41,360
+So right over here, it's not really a good idea to have these values be static.
+
+10
+00:00:41,370 --> 00:00:46,020
+Instead, they should be dynamic depending on the error.
+
+11
+00:00:46,020 --> 00:00:49,260
+And how can we accomplish this?
+
+12
+00:00:49,260 --> 00:00:55,010
+Well, we can accomplish this by utilizing the use error composable.
+
+13
+00:00:55,020 --> 00:01:01,020
+So this is a built in composable that we can auto import and it's going to give us information about
+
+14
+00:01:01,020 --> 00:01:03,550
+the error that we currently have.
+
+15
+00:01:03,570 --> 00:01:10,590
+So I can say here const error is equal to use error and again this is a built in composable and this
+
+16
+00:01:10,590 --> 00:01:15,660
+right here is going to give us an error object that's going to have a bunch of different different information.
+
+17
+00:01:15,690 --> 00:01:21,450
+Now, specifically, one piece of information that we really need is the status code.
+
+18
+00:01:21,450 --> 00:01:24,300
+So I'm going to say error status code.
+
+19
+00:01:24,300 --> 00:01:28,710
+And then right over here I can also say error dot message.
+
+20
+00:01:28,710 --> 00:01:31,140
+So I'm going to go ahead and actually save this.
+
+21
+00:01:31,650 --> 00:01:35,220
+And now let's go to a different URL.
+
+22
+00:01:35,220 --> 00:01:37,290
+And you can see we pretty much get the exact same thing.
+
+23
+00:01:37,290 --> 00:01:38,790
+We still get a 404.
+
+24
+00:01:38,820 --> 00:01:43,710
+We've got actually a nicer message page not found and it tells us exactly what the route is.
+
+25
+00:01:43,710 --> 00:01:49,890
+But now this is dynamic so we can actually reuse this throughout our app.
+

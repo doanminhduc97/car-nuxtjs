@@ -1,0 +1,352 @@
+1
+00:00:00,520 --> 00:00:01,810
+Attached to this lecture.
+
+2
+00:00:01,810 --> 00:00:05,970
+You should have a class dot JSON file.
+
+3
+00:00:05,980 --> 00:00:13,270
+So what I want you to do is to go ahead and download it and then in your root directory, create a data
+
+4
+00:00:13,270 --> 00:00:17,270
+directory and put that cast JSON file within it.
+
+5
+00:00:17,290 --> 00:00:20,320
+Now the data directory is not a special directory.
+
+6
+00:00:20,320 --> 00:00:22,360
+It's not something that Knox looks for.
+
+7
+00:00:22,390 --> 00:00:25,990
+I just think it's a nice name to store our data.
+
+8
+00:00:26,020 --> 00:00:33,130
+So over here we have our castle JSON file and you can see that it is an array of objects and each object
+
+9
+00:00:33,130 --> 00:00:35,770
+has information about a particular car.
+
+10
+00:00:35,770 --> 00:00:41,650
+So it has the ID, the name, the price, the URL seats, miles features, and the description.
+
+11
+00:00:41,650 --> 00:00:48,070
+So what we're going to do is we're going to actually utilize this data right over here to render our
+
+12
+00:00:48,070 --> 00:00:52,570
+car cards right over here rather than have one static card.
+
+13
+00:00:53,110 --> 00:00:55,420
+So let's actually go ahead and do that.
+
+14
+00:00:55,450 --> 00:01:00,160
+Now, one thing that I would like to do in order to really organize everything is I'm going to create
+
+15
+00:01:00,160 --> 00:01:06,390
+a composable and this is going to be called use cars dot JS.
+
+16
+00:01:06,400 --> 00:01:07,300
+So let's go over here.
+
+17
+00:01:07,300 --> 00:01:11,170
+We're going to say const export use cars.
+
+18
+00:01:11,230 --> 00:01:13,540
+It's going to be an arrow function.
+
+19
+00:01:13,540 --> 00:01:20,620
+And over here what a very simply want to do is just import this data and just return it from this function.
+
+20
+00:01:20,830 --> 00:01:26,530
+So what we can do is at the very top of the file, we can just say import cars and then specify the
+
+21
+00:01:26,530 --> 00:01:28,720
+path to that directory.
+
+22
+00:01:28,720 --> 00:01:35,560
+So we can say dot, dot, slash to go to the root directory and then we can go to Stata.
+
+23
+00:01:35,560 --> 00:01:37,510
+And then over here, cars.
+
+24
+00:01:37,960 --> 00:01:42,100
+And then very simply now we can just say return cars like so.
+
+25
+00:01:42,940 --> 00:01:47,980
+However, one thing that we can actually do to optimize the import statement is because we are going
+
+26
+00:01:47,980 --> 00:01:55,420
+back to the root directory, we can actually kind of forego these dot dots and instead we can say at
+
+27
+00:01:55,420 --> 00:01:56,470
+and what this is going to do.
+
+28
+00:01:56,470 --> 00:02:01,090
+Once we say add, it's going to take us right to the root directory and then I'm going to say, okay,
+
+29
+00:02:01,120 --> 00:02:05,500
+from the root directory I want to go to data and then cars dot JSON.
+
+30
+00:02:05,710 --> 00:02:05,920
+Okay.
+
+31
+00:02:06,010 --> 00:02:08,710
+So that's pretty much all it is that we need to do.
+
+32
+00:02:08,710 --> 00:02:12,580
+And now I actually want to make use of this composable.
+
+33
+00:02:12,580 --> 00:02:20,860
+So let's go to the cards and over here let's create a script setup and I'm going to go ahead and just
+
+34
+00:02:20,860 --> 00:02:22,390
+grab this information.
+
+35
+00:02:22,390 --> 00:02:26,770
+So I'm going to say I want to get the cars from use cars.
+
+36
+00:02:26,770 --> 00:02:34,480
+And then what I'm going to do is I'm going to say V four over here and I'm going to say car in cars.
+
+37
+00:02:34,480 --> 00:02:42,550
+And we'll also have a key here and we'll say car dot ID And I think that's pretty much all it is that
+
+38
+00:02:42,550 --> 00:02:42,850
+we need.
+
+39
+00:02:42,850 --> 00:02:45,160
+And actually we have to also pass the props in.
+
+40
+00:02:45,160 --> 00:02:47,500
+So we'll just say car like so.
+
+41
+00:02:47,860 --> 00:02:48,310
+All right.
+
+42
+00:02:48,310 --> 00:02:52,450
+So now we should get three different cars and we don't.
+
+43
+00:02:52,450 --> 00:02:57,580
+And actually I think that's because over here inside of the make we're actually rendering the card and
+
+44
+00:02:57,580 --> 00:02:58,720
+not the cards.
+
+45
+00:02:58,750 --> 00:03:02,140
+So now if I were to save that, you can see we have three different cars.
+
+46
+00:03:02,140 --> 00:03:06,100
+But of course the data is static because we're not using the props.
+
+47
+00:03:06,100 --> 00:03:07,960
+So let's go back over here.
+
+48
+00:03:07,990 --> 00:03:12,040
+Let's go to the card and let's actually make use of those props.
+
+49
+00:03:12,040 --> 00:03:18,670
+So I'm going to say script, I'm going to say set up and over here I'm going to say const and I'll say
+
+50
+00:03:18,670 --> 00:03:26,370
+props is equal to define props, and we'll go ahead and just invoke that like so.
+
+51
+00:03:26,380 --> 00:03:34,300
+And over here, actually we'll just do an object and we'll just say car, and this is going to be an
+
+52
+00:03:34,300 --> 00:03:35,740
+object like so.
+
+53
+00:03:35,740 --> 00:03:36,370
+All right.
+
+54
+00:03:36,520 --> 00:03:40,450
+So now if I were to render car.
+
+55
+00:03:41,260 --> 00:03:44,530
+We should see all the information about that particular car.
+
+56
+00:03:44,650 --> 00:03:45,460
+There we go.
+
+57
+00:03:46,210 --> 00:03:51,000
+So let's go ahead and actually make this dynamic.
+
+58
+00:03:51,010 --> 00:03:53,960
+So for the source, I'm going to make this dynamic.
+
+59
+00:03:53,980 --> 00:03:57,640
+And over here, I'm just going to say car dot.
+
+60
+00:03:57,850 --> 00:04:00,790
+And I'll say, what did I call it here?
+
+61
+00:04:00,790 --> 00:04:02,610
+I believe I called it URL.
+
+62
+00:04:03,130 --> 00:04:04,300
+I'll just get rid of this.
+
+63
+00:04:04,330 --> 00:04:09,300
+Get rid of this, get rid of this, get rid of this or that.
+
+64
+00:04:09,310 --> 00:04:10,640
+So car dot URL.
+
+65
+00:04:10,660 --> 00:04:11,760
+So let's go over here.
+
+66
+00:04:11,770 --> 00:04:13,270
+Car URL.
+
+67
+00:04:13,600 --> 00:04:14,830
+That looks good to me.
+
+68
+00:04:16,610 --> 00:04:23,930
+And we'll say car dot and what I call this here car dot name for this.
+
+69
+00:04:24,230 --> 00:04:27,170
+And then over here, car description.
+
+70
+00:04:27,950 --> 00:04:33,040
+So say card dot descript shun.
+
+71
+00:04:33,950 --> 00:04:39,740
+And lastly, right over here we'll say car dot price.
+
+72
+00:04:40,070 --> 00:04:41,420
+Nice and easy stuff.
+
+73
+00:04:41,880 --> 00:04:49,820
+Okay, so now if I were to do a quick little refresh, you can see that everything is nice and dynamic.
+
+74
+00:04:49,940 --> 00:04:53,570
+So what I would like to do is actually now make these cards clickable.
+
+75
+00:04:53,570 --> 00:04:57,120
+So when I click on them, they actually go to the correct page.
+
+76
+00:04:57,140 --> 00:05:01,700
+So right over, we'll say right over here.
+
+77
+00:05:02,360 --> 00:05:04,940
+We might change this later on and I'll show you exactly why.
+
+78
+00:05:04,940 --> 00:05:07,520
+But right now we'll just add an add click.
+
+79
+00:05:07,550 --> 00:05:13,280
+And very simply, what we'll say is I want to navigate.
+
+80
+00:05:13,310 --> 00:05:19,190
+So navigate to and I want to navigate to and we'll add template literals here.
+
+81
+00:05:19,190 --> 00:05:20,690
+And where do we want to navigate?
+
+82
+00:05:20,690 --> 00:05:31,220
+Well, we want to navigate to slash car and then slash and then over here we will say car dot name and
+
+83
+00:05:31,220 --> 00:05:35,630
+then remember it's going to be dash and then the car dot ID.
+
+84
+00:05:36,050 --> 00:05:36,380
+All right.
+
+85
+00:05:36,380 --> 00:05:38,500
+So let's go ahead and quickly save that.
+
+86
+00:05:38,510 --> 00:05:44,390
+And now, if I were to click on this, you can see now I get taken to the actual car page.
+
+87
+00:05:44,390 --> 00:05:51,290
+So now that we got that dynamic, let's actually make this page over here dynamic rather than kind of
+
+88
+00:05:51,290 --> 00:05:54,650
+having rendering all of these static information.
+

@@ -1,0 +1,340 @@
+1
+00:00:00,600 --> 00:00:03,410
+So we learned about layouts, which is great.
+
+2
+00:00:03,440 --> 00:00:06,870
+You can see it's a really nice way to clean up our code.
+
+3
+00:00:07,080 --> 00:00:13,800
+However, right now I'm going to go ahead and just focus in on some of these pages over here.
+
+4
+00:00:14,280 --> 00:00:16,020
+So let's first look at this page over here.
+
+5
+00:00:16,020 --> 00:00:19,470
+So we have our nav bar and we also have this hero.
+
+6
+00:00:19,500 --> 00:00:22,230
+And then let's go to this page right here.
+
+7
+00:00:22,260 --> 00:00:28,350
+Now, you can see we have the nav bar, but you can see that all of the content, no matter how much
+
+8
+00:00:28,350 --> 00:00:35,160
+content that we have, is always going to be confined from right over here to right over here.
+
+9
+00:00:35,160 --> 00:00:37,560
+So right here to right here.
+
+10
+00:00:37,560 --> 00:00:40,700
+And it's not going to spend the entire width of our screen.
+
+11
+00:00:40,710 --> 00:00:47,190
+And if I were to go to let's say I'm going to go let's just pick a car here.
+
+12
+00:00:47,190 --> 00:00:52,710
+So slash, slash car and then we're going to say Jeep one.
+
+13
+00:00:52,740 --> 00:00:55,050
+You can see here, this is the exact same thing.
+
+14
+00:00:55,050 --> 00:00:59,130
+So it's always going to span right over here.
+
+15
+00:00:59,130 --> 00:01:02,820
+It's not going to we're always going to have these white spaces and it's going to span kind of right
+
+16
+00:01:02,820 --> 00:01:03,660
+in the middle.
+
+17
+00:01:03,660 --> 00:01:08,280
+And this is actually done by having this div element right here.
+
+18
+00:01:08,280 --> 00:01:15,330
+So this div has all of the tailwind classes that are needed to have that stylistic effect.
+
+19
+00:01:15,330 --> 00:01:23,820
+And the only really exist in right now two of our pages, our main page doesn't have this exact div,
+
+20
+00:01:24,210 --> 00:01:25,890
+this exact div element.
+
+21
+00:01:26,310 --> 00:01:33,690
+Now in cases where we have maybe some pages, you know, a group of pages that follow a particular layout,
+
+22
+00:01:33,690 --> 00:01:39,750
+but others that don't, we obviously don't want to have a default layout for all of them, but instead
+
+23
+00:01:39,750 --> 00:01:47,130
+what we want to do is we want to have a custom layout and then apply that custom layout to those group
+
+24
+00:01:47,130 --> 00:01:48,110
+of pages.
+
+25
+00:01:48,120 --> 00:01:56,010
+So again, in our case, these two pages have this div right over here and I think it would be nice
+
+26
+00:01:56,010 --> 00:01:58,770
+to kind of abstract it into a layout.
+
+27
+00:01:58,770 --> 00:02:04,110
+So again, what we're going to need to do is define a custom layout and let's go ahead and do that.
+
+28
+00:02:04,110 --> 00:02:09,960
+So custom layout can be called whatever it is that we want and call them banana dot view, whatever
+
+29
+00:02:09,960 --> 00:02:10,470
+dot view.
+
+30
+00:02:10,470 --> 00:02:16,740
+I'm just going to go ahead and just call them custom dot view just to kind of kind of ensure in your
+
+31
+00:02:16,740 --> 00:02:19,160
+mind that this is a custom layout.
+
+32
+00:02:19,170 --> 00:02:25,650
+I'm going to go ahead and just define the div, the template, and then I am going to go and grab this
+
+33
+00:02:25,650 --> 00:02:26,820
+div right here.
+
+34
+00:02:26,820 --> 00:02:28,610
+So go ahead and just grab that.
+
+35
+00:02:28,620 --> 00:02:31,830
+I'm going to go ahead and paste it in here.
+
+36
+00:02:31,830 --> 00:02:35,130
+So I'm going to go ahead and paste it in here and let's add the closing div as well.
+
+37
+00:02:35,130 --> 00:02:42,180
+So closing div like so and so over here is where I'm going to house the slot.
+
+38
+00:02:42,180 --> 00:02:45,480
+So over here is where I'm going to house the slot like so.
+
+39
+00:02:45,570 --> 00:02:52,680
+So now what I want to do is I want to actually utilize this custom layout within these two pages.
+
+40
+00:02:52,680 --> 00:02:58,110
+So what we're going to need to do is actually override the default layout.
+
+41
+00:02:58,560 --> 00:03:01,230
+And to do that, we can define.
+
+42
+00:03:02,040 --> 00:03:04,470
+And we can define the.
+
+43
+00:03:04,470 --> 00:03:06,210
+Let me just scroll down here.
+
+44
+00:03:06,360 --> 00:03:10,230
+We can go ahead and define the page meta.
+
+45
+00:03:10,290 --> 00:03:12,210
+This is something that is auto imported.
+
+46
+00:03:12,480 --> 00:03:16,890
+And over here, we're going to call it, and we're going to pass in the object, which is going to be
+
+47
+00:03:16,890 --> 00:03:17,590
+the meta.
+
+48
+00:03:17,610 --> 00:03:19,500
+And we're going to specify the layout.
+
+49
+00:03:19,500 --> 00:03:23,250
+And the layout is going to be the name of the file, in this case, custom.
+
+50
+00:03:23,430 --> 00:03:25,260
+So let's go ahead and actually save this.
+
+51
+00:03:25,260 --> 00:03:27,210
+And if I were to refresh.
+
+52
+00:03:28,250 --> 00:03:32,170
+You can see we get this really wonky effect.
+
+53
+00:03:32,180 --> 00:03:37,040
+And the reason why we're getting this effect here is now what we're going to need to do is remove this
+
+54
+00:03:37,040 --> 00:03:37,550
+right here.
+
+55
+00:03:37,550 --> 00:03:41,750
+So let's remove this div because we don't need that anymore.
+
+56
+00:03:42,970 --> 00:03:47,710
+And if I were to save it now you can see it looks exactly the same, except it doesn't have the knife
+
+57
+00:03:47,710 --> 00:03:48,190
+bar.
+
+58
+00:03:48,220 --> 00:03:54,340
+So it's very important to understand that what we did here was we overwritten the default layout, so
+
+59
+00:03:54,340 --> 00:03:56,230
+we're not going to be using that anymore.
+
+60
+00:03:56,230 --> 00:04:01,810
+So if we still want to have the nav bar in our custom layouts, we're going to need to specify it.
+
+61
+00:04:01,810 --> 00:04:05,950
+So very simply, we can just say here, nav bar like so.
+
+62
+00:04:05,950 --> 00:04:11,530
+And now we have our nav bar and over here you can see that the code is actually getting significantly
+
+63
+00:04:11,530 --> 00:04:11,940
+less.
+
+64
+00:04:11,950 --> 00:04:14,410
+It's a lot nicer now.
+
+65
+00:04:14,410 --> 00:04:16,390
+We don't have that big div that's in our way.
+
+66
+00:04:16,390 --> 00:04:20,260
+We just have the parent div and we have all of this content as well.
+
+67
+00:04:20,260 --> 00:04:23,880
+So you can see our code is getting significantly cleaner and we can do it.
+
+68
+00:04:23,910 --> 00:04:25,750
+Of course the exact same thing over here.
+
+69
+00:04:25,750 --> 00:04:34,750
+So we can instead say, define uh and then it was cost or defined page meta.
+
+70
+00:04:36,050 --> 00:04:37,790
+And over here we can say layout.
+
+71
+00:04:37,790 --> 00:04:39,590
+I'm going to say custom.
+
+72
+00:04:40,520 --> 00:04:43,110
+And now we can go ahead and just remove this div.
+
+73
+00:04:43,130 --> 00:04:45,080
+So let's remove that div.
+
+74
+00:04:45,110 --> 00:04:46,550
+We'll remove this.
+
+75
+00:04:47,500 --> 00:04:48,630
+And there we go.
+
+76
+00:04:48,640 --> 00:04:50,650
+That's pretty much all it is that we need to do.
+
+77
+00:04:50,650 --> 00:04:58,570
+So now, if I were to go to here and let's just say Houston, Houston and search and you can see that
+
+78
+00:04:58,570 --> 00:05:00,750
+it looks a little bit wonky here.
+
+79
+00:05:00,760 --> 00:05:04,960
+So let's see why that is so define page meta.
+
+80
+00:05:04,960 --> 00:05:06,700
+We have the layout.
+
+81
+00:05:06,700 --> 00:05:08,110
+Let's do a refresh.
+
+82
+00:05:08,140 --> 00:05:08,830
+There we go.
+
+83
+00:05:08,830 --> 00:05:10,920
+So so it was just wasn't refreshed.
+
+84
+00:05:10,930 --> 00:05:19,540
+So you can see here now it is indeed working and we have significantly reduced the complexity of our
+
+85
+00:05:19,540 --> 00:05:20,290
+code.
+
