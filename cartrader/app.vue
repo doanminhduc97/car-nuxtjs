@@ -5,6 +5,8 @@
       <a class="text-3xl font-mono" href="">Cartrader</a>
     </header> -->
     <!-- navbar -->
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
